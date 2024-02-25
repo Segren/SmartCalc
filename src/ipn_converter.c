@@ -141,6 +141,10 @@ char *tokenize(char *expression)
             }
             i++;
         }
+        else if (expression[i] == ' ')
+        {
+            i++;
+        }
         else
         {
             printf("Tokenize: input unknown\n");
@@ -428,7 +432,7 @@ bool calculatePostfix(char *postfix, double *result, double x)
 
 int main(void)
 {
-    char *input = "atan(x+5/2)";
+    char *input = "-  (2 +  3 )  * 4";
     if (hasBalancedParenthesis(input) == 0)
     {
         char *postfix = tokenize(input);
