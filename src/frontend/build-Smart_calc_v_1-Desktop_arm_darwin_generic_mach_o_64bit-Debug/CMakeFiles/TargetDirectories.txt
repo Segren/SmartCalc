@@ -1,0 +1,9 @@
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Smart_calc_v_1.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/edit_cache.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/list_install_components.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/install.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/install/local.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/install/strip.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps.dir
+/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/Smart_calc_v_1_autogen.dir
