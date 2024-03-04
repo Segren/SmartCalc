@@ -80,8 +80,8 @@ clean: CMakeFiles/Smart_calc_v_1_autogen.dir/clean
 # Target rules for target CMakeFiles/Smart_calc_v_1.dir
 
 # All Build rule for target.
-CMakeFiles/Smart_calc_v_1.dir/all: CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps.dir/all
 CMakeFiles/Smart_calc_v_1.dir/all: CMakeFiles/Smart_calc_v_1_autogen.dir/all
+CMakeFiles/Smart_calc_v_1.dir/all: CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_calc_v_1.dir/build.make CMakeFiles/Smart_calc_v_1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_calc_v_1.dir/build.make CMakeFiles/Smart_calc_v_1.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-Smart_calc_v_1-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Smart_calc_v_1"

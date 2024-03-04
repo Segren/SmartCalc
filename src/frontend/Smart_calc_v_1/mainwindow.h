@@ -2,6 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QRegularExpression>
+#include <QString>
+
+extern "C"{
+#include "../../backend/s21_smart_calc.h"
+#include "../../backend/ipn_converter.h"
+#include "../../backend/stack.h"
+}
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,12 +25,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-    void buttonZero_clicked();
-
-    void lineEdit_textChanged(const QString &arg1);
-
 private:
     Ui::MainWindow *ui;
+    QString formatExpressionWithSpaces(const QString &expression);
+    QString formatNumberWithSpaces(const QString &number);
+
+private slots:
+    void digits_numbers();
+    void on_pushButton_dot_clicked();
+    void operations();
+    void on_pushButton_AC_clicked();
+    void on_pushButton_equal_clicked();
 };
 #endif // MAINWINDOW_H

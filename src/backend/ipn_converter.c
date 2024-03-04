@@ -430,21 +430,21 @@ bool calculatePostfix(char *postfix, double *result, double x)
     return flag;
 }
 
-int main(void)
-{
-    char *input = "-  (2 +  3 )  * 4";
-    if (hasBalancedParenthesis(input) == 0)
-    {
-        char *postfix = tokenize(input);
-        double result;
-        double x = -599.0;
-        if (calculatePostfix(postfix, &result, x))
-        {
-            printf("%lf", result);
-        }
-        else
-            printf("error\n");
-        free(postfix);
-    }
-    return 0;
-}
+// int main(void)
+// {
+//     char *input = "-  (2 +  3 )  * 4";
+//     if (hasBalancedParenthesis(input) == 0)
+//     {
+//         char *postfix = tokenize(input);
+//         double result;
+//         double x = -599.0;
+//         if (calculatePostfix(postfix, &result, x))
+//         {
+//             printf("%lf", result);
+//         }
+//         else
+//             printf("error\n");
+//         free(postfix);
+//     }
+//     return 0;
+// }

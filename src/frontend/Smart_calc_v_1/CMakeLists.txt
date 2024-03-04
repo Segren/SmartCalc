@@ -23,6 +23,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Smart_calc_v_1
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ../../backend/ipn_converter.c ../../backend/ipn_converter.h ../../backend/s21_smart_calc.c ../../backend/s21_smart_calc.h ../../backend/stack.c ../../backend/stack.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Smart_calc_v_1 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -38,9 +39,14 @@ else()
     else()
         add_executable(Smart_calc_v_1
             ${PROJECT_SOURCES}
+            # ../backend/s21_smart_calc.c     !!!!!
+            # ../backend/ipn_converter.c
+            # ../backend/stack.c
         )
     endif()
 endif()
+
+# target_include_directories(Smart_calc_v_1 PRIVATE ../backend)     !!!!!
 
 target_link_libraries(Smart_calc_v_1 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 

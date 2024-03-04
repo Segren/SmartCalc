@@ -66,9 +66,9 @@ include CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps.dir/compiler_depend.mak
 # Include the progress variables for this target.
 include CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps: /opt/homebrew/share/qt/libexec/moc
 CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps: /opt/homebrew/share/qt/libexec/uic
+CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
 
 Smart_calc_v_1_autogen_timestamp_deps: CMakeFiles/Smart_calc_v_1_autogen_timestamp_deps
