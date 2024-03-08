@@ -7,6 +7,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    int fontId = QFontDatabase::addApplicationFont(":new/fonts/digital-7.ttf");
+    QString fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
+    QFont font(fontFamily);
+    ui->result_show->setFont(font);
+
+    // Задать фиксированный размер для главного окна
+    ui->setupUi(this);
+    this->setFixedSize(this->width(), this->height());
+
     connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digits_numbers()));
     connect(ui->pushButton_1, SIGNAL(clicked()), this, SLOT(digits_numbers()));
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(digits_numbers()));
@@ -23,6 +32,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_minus, SIGNAL(clicked()), this, SLOT(operations()));
     connect(ui->pushButton_multiply, SIGNAL(clicked()), this, SLOT(operations()));
     connect(ui->pushButton_divide, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_AC, &QPushButton::clicked, this, &MainWindow::on_pushButton_AC_clicked);
+    connect(ui->pushButton_dot, &QPushButton::clicked, this, &MainWindow::on_pushButton_dot_clicked);
+    connect(ui->pushButton_equal, &QPushButton::clicked, this, &MainWindow::on_pushButton_equal_clicked);
+
 }
 
 
@@ -187,6 +200,30 @@ void MainWindow::operations()
             new_label = formatExpressionWithSpaces(new_label);
             ui->result_show->setText(new_label);
         }
+    } else if(button->text() == "-")
+    {
+        if(!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0).isDigit() || current_text_no_spaces.right(1).at(0) == QChar(')') || current_text_no_spaces.right(1).at(0) == QChar('(')))
+        {
+            new_label = (current_text_no_spaces + button->text());
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "*")
+    {
+        if(!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0).isDigit() || current_text_no_spaces.right(1).at(0) == QChar(')')))
+        {
+            new_label = (current_text_no_spaces + "*");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "/")
+    {
+        if(!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0).isDigit() || current_text_no_spaces.right(1).at(0) == QChar(')')))
+        {
+            new_label = (current_text_no_spaces + "/");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
     }
 }
 
@@ -198,17 +235,45 @@ void MainWindow::on_pushButton_AC_clicked()
 
 void MainWindow::on_pushButton_equal_clicked()
 {
-    // QString qtInfix = ui->result_show->text();
-    // QByteArray byteArray = qtInfix.toUtf8();
-    // char* infix = byteArray.data();
-    // char *postfix = tokenize(infix);
-    // double x = NULL;
-    // double result;
-    // calculatePostfix(postfix, &result, x);
-    // free(postfix);
+    QString qtInfix = ui->result_show->text().remove(' ');
+    if(!qtInfix.isEmpty() && (qtInfix.right(1).at(0) == QChar(')') || qtInfix.right(1).at(0).isDigit()))
+    {
+        QByteArray byteArray = qtInfix.toUtf8();
+        char* infix = byteArray.data();
+        char *postfix = tokenize(infix);
+        double x = 0;
+        double result;
+        bool noDivByZero = calculatePostfix(postfix, &result, x);
+        free(postfix);
 
-    // QString resultString = QString::number(result);
-    // resultString = formatExpressionWithSpaces(resultString);
-    // ui->result_show->setText(resultString);
+        if(noDivByZero)
+        {
+            if (std::abs(result - qRound(result)) < 0.0000000001) {
+                result = qRound(result);
+            }
+
+            //устраняем проблемы с лишними нулями при округлении
+            QString resultString = QString::number(result, 'f',10);
+            resultString = formatExpressionWithSpaces(resultString);
+
+            //убираем лишние нули и точку если она последняя
+            static QRegularExpression regexZero("0+$");
+            static QRegularExpression regexDot("\\.$");
+            resultString.remove(regexZero);
+            resultString.remove(regexDot);
+
+            ui->result_show->setText(resultString);
+        } else
+        {
+            QMessageBox msgBox;
+            QString imagePath = QCoreApplication::applicationDirPath() + "/../../../../images/divByZero.png";
+            QPixmap pixmap(imagePath);
+
+            msgBox.setWindowTitle("Division error");
+            msgBox.setText("Can not divide by zero!");
+            msgBox.setIconPixmap(pixmap);
+            msgBox.exec();
+        }
+    }
 }
 

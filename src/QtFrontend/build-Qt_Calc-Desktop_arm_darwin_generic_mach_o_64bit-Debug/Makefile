@@ -52,12 +52,21 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Qt_Calc/main.cpp \
-		../Qt_Calc/mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = main.o \
+SOURCES       = ../../backend/ipn_converter.c \
+		../../backend/s21_smart_calc.c \
+		../../backend/stack.c \
+		../Qt_Calc/main.cpp \
+		../Qt_Calc/mainwindow.cpp qrc_resources.cpp \
+		moc_mainwindow.cpp
+OBJECTS       = ipn_converter.o \
+		s21_smart_calc.o \
+		stack.o \
+		main.o \
 		mainwindow.o \
+		qrc_resources.o \
 		moc_mainwindow.o
-DIST          = /opt/homebrew/share/qt/mkspecs/features/spec_pre.prf \
+DIST          = ../images/divByZero.png \
+		/opt/homebrew/share/qt/mkspecs/features/spec_pre.prf \
 		/opt/homebrew/share/qt/mkspecs/features/device_config.prf \
 		/opt/homebrew/Cellar/qt/6.6.2_1/share/qt/mkspecs/common/unix.conf \
 		/opt/homebrew/Cellar/qt/6.6.2_1/share/qt/mkspecs/common/mac.conf \
@@ -340,6 +349,7 @@ DIST          = /opt/homebrew/share/qt/mkspecs/features/spec_pre.prf \
 		/opt/homebrew/share/qt/mkspecs/features/qt_config.prf \
 		/opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf \
 		/opt/homebrew/share/qt/mkspecs/features/spec_post.prf \
+		../Qt_Calc/.qmake.stash \
 		/opt/homebrew/share/qt/mkspecs/features/exclusive_builds.prf \
 		/opt/homebrew/share/qt/mkspecs/features/mac/sdk.prf \
 		/opt/homebrew/share/qt/mkspecs/features/toolchain.prf \
@@ -369,7 +379,13 @@ DIST          = /opt/homebrew/share/qt/mkspecs/features/spec_pre.prf \
 		/opt/homebrew/share/qt/mkspecs/features/exceptions.prf \
 		/opt/homebrew/share/qt/mkspecs/features/yacc.prf \
 		/opt/homebrew/share/qt/mkspecs/features/lex.prf \
-		../Qt_Calc/Qt_Calc.pro ../Qt_Calc/mainwindow.h ../Qt_Calc/main.cpp \
+		../Qt_Calc/Qt_Calc.pro ../../backend/ipn_converter.h \
+		../../backend/s21_smart_calc.h \
+		../../backend/stack.h \
+		../Qt_Calc/mainwindow.h ../../backend/ipn_converter.c \
+		../../backend/s21_smart_calc.c \
+		../../backend/stack.c \
+		../Qt_Calc/main.cpp \
 		../Qt_Calc/mainwindow.cpp
 QMAKE_TARGET  = Qt_Calc
 DESTDIR       = 
@@ -379,7 +395,7 @@ TARGET        = Qt_Calc.app/Contents/MacOS/Qt_Calc
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 14.2
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/QtFrontend/build-Qt_Calc-Desktop_arm_darwin_generic_mach_o_64bit-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = arm64
 EXPORT_DEFAULT_ARCHS = arm64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -678,6 +694,7 @@ Makefile: ../Qt_Calc/Qt_Calc.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake
 		/opt/homebrew/share/qt/mkspecs/features/qt_config.prf \
 		/opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf \
 		/opt/homebrew/share/qt/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/homebrew/share/qt/mkspecs/features/exclusive_builds.prf \
 		/opt/homebrew/share/qt/mkspecs/features/mac/sdk.prf \
 		/opt/homebrew/share/qt/mkspecs/features/toolchain.prf \
@@ -708,6 +725,7 @@ Makefile: ../Qt_Calc/Qt_Calc.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake
 		/opt/homebrew/share/qt/mkspecs/features/yacc.prf \
 		/opt/homebrew/share/qt/mkspecs/features/lex.prf \
 		../Qt_Calc/Qt_Calc.pro \
+		../Qt_Calc/resources.qrc \
 		/opt/homebrew/lib/QtWidgets.framework/Resources/QtWidgets.prl \
 		/opt/homebrew/lib/QtGui.framework/Resources/QtGui.prl \
 		/opt/homebrew/lib/QtCore.framework/Resources/QtCore.prl
@@ -995,6 +1013,7 @@ Makefile: ../Qt_Calc/Qt_Calc.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake
 /opt/homebrew/share/qt/mkspecs/features/qt_config.prf:
 /opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf:
 /opt/homebrew/share/qt/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/homebrew/share/qt/mkspecs/features/exclusive_builds.prf:
 /opt/homebrew/share/qt/mkspecs/features/mac/sdk.prf:
 /opt/homebrew/share/qt/mkspecs/features/toolchain.prf:
@@ -1025,6 +1044,7 @@ Makefile: ../Qt_Calc/Qt_Calc.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake
 /opt/homebrew/share/qt/mkspecs/features/yacc.prf:
 /opt/homebrew/share/qt/mkspecs/features/lex.prf:
 ../Qt_Calc/Qt_Calc.pro:
+../Qt_Calc/resources.qrc:
 /opt/homebrew/lib/QtWidgets.framework/Resources/QtWidgets.prl:
 /opt/homebrew/lib/QtGui.framework/Resources/QtGui.prl:
 /opt/homebrew/lib/QtCore.framework/Resources/QtCore.prl:
@@ -1052,9 +1072,10 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../Qt_Calc/resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Qt_Calc/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Qt_Calc/main.cpp ../Qt_Calc/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../backend/ipn_converter.h ../../backend/s21_smart_calc.h ../../backend/stack.h ../Qt_Calc/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../backend/ipn_converter.c ../../backend/s21_smart_calc.c ../../backend/stack.c ../Qt_Calc/main.cpp ../Qt_Calc/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Qt_Calc/mainwindow.ui $(DISTDIR)/
 
 
@@ -1065,6 +1086,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r Qt_Calc.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -1081,8 +1103,15 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resources.cpp
+qrc_resources.cpp: ../Qt_Calc/resources.qrc \
+		/opt/homebrew/share/qt/libexec/rcc \
+		../Qt_Calc/digital-7.ttf \
+		../Qt_Calc/digital-7\ (mono).ttf
+	/opt/homebrew/share/qt/libexec/rcc -name resources ../Qt_Calc/resources.qrc -o qrc_resources.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -1099,6 +1128,8 @@ moc_mainwindow.cpp: ../Qt_Calc/mainwindow.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qregularexpression.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QString \
 		/opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
@@ -1125,9 +1156,21 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+ipn_converter.o: ../../backend/ipn_converter.c ../../backend/ipn_converter.h \
+		../../backend/s21_smart_calc.h \
+		../../backend/stack.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o ipn_converter.o ../../backend/ipn_converter.c
+
+s21_smart_calc.o: ../../backend/s21_smart_calc.c ../../backend/s21_smart_calc.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o s21_smart_calc.o ../../backend/s21_smart_calc.c
+
+stack.o: ../../backend/stack.c ../../backend/stack.h \
+		../../backend/s21_smart_calc.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o stack.o ../../backend/stack.c
 
 main.o: ../Qt_Calc/main.cpp ../Qt_Calc/mainwindow.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
@@ -1136,6 +1179,8 @@ main.o: ../Qt_Calc/main.cpp ../Qt_Calc/mainwindow.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qregularexpression.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QString \
 		/opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
@@ -1150,11 +1195,16 @@ mainwindow.o: ../Qt_Calc/mainwindow.cpp ../Qt_Calc/mainwindow.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qregularexpression.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QString \
 		/opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Qt_Calc/mainwindow.cpp
+
+qrc_resources.o: qrc_resources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

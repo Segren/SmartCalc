@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>241</width>
-    <height>376</height>
+    <height>478</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>135</y>
+      <y>232</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -39,9 +39,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>135</y>
+      <y>232</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -60,9 +60,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>135</y>
+      <y>232</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -81,9 +81,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>135</y>
+      <y>232</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -98,16 +98,16 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>x</string>
+     <string>*</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>195</y>
+      <y>282</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -126,9 +126,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>195</y>
+      <y>282</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -150,9 +150,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>195</y>
+      <y>282</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -171,9 +171,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>195</y>
+      <y>282</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -192,9 +192,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>255</y>
+      <y>332</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -213,9 +213,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>255</y>
+      <y>332</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -237,9 +237,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>255</y>
+      <y>332</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -258,9 +258,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>255</y>
+      <y>332</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -279,9 +279,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>315</y>
+      <y>382</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -306,9 +306,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>315</y>
+      <y>382</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -329,11 +329,17 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_0">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>315</y>
-      <width>121</width>
-      <height>61</height>
+      <x>60</x>
+      <y>382</y>
+      <width>61</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Academy Engraved LET</family>
+      <pointsize>15</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -350,25 +356,49 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_back">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>75</y>
-      <width>61</width>
-      <height>61</height>
+      <x>210</x>
+      <y>151</y>
+      <width>31</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Academy Engraved LET</family>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-color: rgb(215, 215, 215);
-	border: 1px solid gray;
+    /* Основные настройки */
+
+    background-color:  qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #f6f7fa, stop:1 #dadbde);
+    min-width: 10px;
+    min-height: 5px;
+    border-radius: 6px;
+
+    /* Текст и шрифт */
+    color: #333;
+    font: bold 14px;
+    padding: 6px;
 }
+
+QPushButton:hover {
+    /* Изменения при наведении курсора */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #dadbde, stop:1 #FF9739);
+}
+
 QPushButton:pressed {
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0,  y2: 1, stop: 0 #BEBEBE, stop: 1 #D7D7D7);
-}</string>
+    /* Изменения при нажатии */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #30333c, stop:1 #6794CA);
+    color: white;
+}
+</string>
     </property>
     <property name="text">
      <string>&lt;&lt;</string>
@@ -378,9 +408,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>75</y>
+      <y>182</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -395,16 +425,16 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>÷</string>
+     <string>/</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_AC">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>75</y>
+      <y>182</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -429,9 +459,9 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>75</y>
+      <y>182</y>
       <width>61</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -455,29 +485,796 @@ QPushButton:pressed {
    <widget class="QLabel" name="result_show">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-1</x>
       <y>0</y>
-      <width>231</width>
-      <height>71</height>
+      <width>252</width>
+      <height>69</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Digital-7</family>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-family: 'Digital-7', Monospace; /* Шрифты */
+    font-size: 30pt; /* Размер шрифта */
+    padding: 8px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_brackets">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>182</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(215, 215, 215);
+	border: 1px solid gray;
+}
+QPushButton:pressed {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0,  y2: 1, stop: 0 #BEBEBE, stop: 1 #D7D7D7);
+}</string>
+    </property>
+    <property name="text">
+     <string>()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_loan">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>440</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    /* Основные настройки */
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #f6f7fa, stop:1 #dadbde);
+    min-width: 40px;
+    min-height: 10px;
+
+    /* Текст и шрифт */
+    color: #333;
+    font: bold 14px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    /* Изменения при наведении курсора */
+    border: 2px solid #FF7832;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #dadbde, stop:1 #FF9739);
+}
+
+QPushButton:pressed {
+    /* Изменения при нажатии */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #FF7832, stop:1 #FF9739);
+    color: white;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Credit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_deposit">
+    <property name="geometry">
+     <rect>
+      <x>85</x>
+      <y>440</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    /* Основные настройки */
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #f6f7fa, stop:1 #dadbde);
+    min-width: 40px;
+    min-height: 10px;
+
+    /* Текст и шрифт */
+    color: #333;
+    font: bold 14px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    /* Изменения при наведении курсора */
+    border: 2px solid #FF7832;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #dadbde, stop:1 #FF9739);
+}
+
+QPushButton:pressed {
+    /* Изменения при нажатии */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #FF7832, stop:1 #FF9739);
+    color: white;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Deposit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_00">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>382</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Academy Engraved LET</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	border: 1px solid gray;
+}
+QPushButton:pressed {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+    </property>
+    <property name="text">
+     <string>00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="background_grey">
+    <property name="geometry">
+     <rect>
+      <x>-430</x>
+      <y>-11</y>
+      <width>681</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Digital-7</family>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: white; /* Цвет текста */
+    background-color: rgb(215, 215, 215); /* Фоновый цвет */
+    font-family: 'Digital-7', Monospace; /* Шрифты */
+    font-size: 30pt; /* Размер шрифта */
+    padding: 8px; /* Внутренние отступы */
+    border: 3px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_graph">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    /* Основные настройки */
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #f6f7fa, stop:1 #dadbde);
+    min-width: 40px;
+    min-height: 10px;
+
+    /* Текст и шрифт */
+    color: #333;
+    font: bold 14px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    /* Изменения при наведении курсора */
+    border: 2px solid #FF7832;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #dadbde, stop:1 #FF9739);
+}
+
+QPushButton:pressed {
+    /* Изменения при нажатии */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #FF7832, stop:1 #FF9739);
+    color: white;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Graph</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>151</y>
+      <width>36</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    /* Основные настройки */
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #f6f7fa, stop:1 #dadbde);
+    min-width: 20px;
+    min-height: 10px;
+
+    /* Текст и шрифт */
+    color: #333;
+    font: bold 14px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    /* Изменения при наведении курсора */
+    border: 2px solid #FF7832;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #dadbde, stop:1 #FF9739);
+}
+
+QPushButton:pressed {
+    /* Изменения при нажатии */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #FF7832, stop:1 #FF9739);
+    color: white;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_equal">
+    <property name="geometry">
+     <rect>
+      <x>38</x>
+      <y>156</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>=</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>72</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>sin</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_3">
+    <property name="geometry">
+     <rect>
+      <x>62</x>
+      <y>72</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>cos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_4">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>72</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>tan</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>98</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>asin</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_6">
+    <property name="geometry">
+     <rect>
+      <x>62</x>
+      <y>98</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>acos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_7">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>98</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>atan</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_8">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>124</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>^</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_9">
+    <property name="geometry">
+     <rect>
+      <x>62</x>
+      <y>124</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>sqrt</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_10">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>124</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>%</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_11">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>72</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>log</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_12">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>98</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>ln</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_X_13">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>124</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>mod</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="result_show_2">
+    <property name="geometry">
+     <rect>
+      <x>49</x>
+      <y>151</y>
+      <width>161</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Digital-7</family>
       <pointsize>20</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
 	qproperty-alignment: 'AlignVCenter | AlignRight';
-	border-bottom: 1px solid gray;
+    color: white; /* Цвет текста */
+    background-color: rgb(215, 215, 215); /* Фоновый цвет */
+	border-radius: 6px; 
+    font-family: 'Digital-7', Monospace; /* Шрифты */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 8px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
 }
-
-background-color : white;</string>
+</string>
     </property>
     <property name="text">
      <string/>
     </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
    </widget>
+   <zorder>pushButton_back</zorder>
+   <zorder>background_grey</zorder>
+   <zorder>pushButton_7</zorder>
+   <zorder>pushButton_8</zorder>
+   <zorder>pushButton_9</zorder>
+   <zorder>pushButton_multiply</zorder>
+   <zorder>pushButton_6</zorder>
+   <zorder>pushButton_minus</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_plus</zorder>
+   <zorder>pushButton_1</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_dot</zorder>
+   <zorder>pushButton_equal</zorder>
+   <zorder>pushButton_0</zorder>
+   <zorder>pushButton_divide</zorder>
+   <zorder>pushButton_AC</zorder>
+   <zorder>pushButton_signChange</zorder>
+   <zorder>result_show</zorder>
+   <zorder>pushButton_brackets</zorder>
+   <zorder>pushButton_loan</zorder>
+   <zorder>pushButton_deposit</zorder>
+   <zorder>pushButton_00</zorder>
+   <zorder>pushButton_graph</zorder>
+   <zorder>pushButton_X</zorder>
+   <zorder>label_equal</zorder>
+   <zorder>pushButton_X_2</zorder>
+   <zorder>pushButton_X_3</zorder>
+   <zorder>pushButton_X_4</zorder>
+   <zorder>pushButton_X_5</zorder>
+   <zorder>pushButton_X_6</zorder>
+   <zorder>pushButton_X_7</zorder>
+   <zorder>pushButton_X_8</zorder>
+   <zorder>pushButton_X_9</zorder>
+   <zorder>pushButton_X_10</zorder>
+   <zorder>pushButton_X_11</zorder>
+   <zorder>pushButton_X_12</zorder>
+   <zorder>pushButton_X_13</zorder>
+   <zorder>result_show_2</zorder>
   </widget>
  </widget>
  <resources/>

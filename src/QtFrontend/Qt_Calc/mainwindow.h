@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include <QRegularExpression>
 #include <QString>
+#include <QMessageBox>
+#include <QFontDatabase>
+
+
 
 extern "C"{
 #include "../../backend/s21_smart_calc.h"
