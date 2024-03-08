@@ -43,25 +43,25 @@ public:
     QPushButton *pushButton_signChange;
     QLabel *result_show;
     QPushButton *pushButton_brackets;
-    QPushButton *pushButton_loan;
+    QPushButton *pushButton_credit;
     QPushButton *pushButton_deposit;
     QPushButton *pushButton_00;
     QLabel *background_grey;
     QPushButton *pushButton_graph;
     QPushButton *pushButton_X;
     QLabel *label_equal;
-    QPushButton *pushButton_X_2;
-    QPushButton *pushButton_X_3;
-    QPushButton *pushButton_X_4;
-    QPushButton *pushButton_X_5;
-    QPushButton *pushButton_X_6;
-    QPushButton *pushButton_X_7;
-    QPushButton *pushButton_X_8;
-    QPushButton *pushButton_X_9;
-    QPushButton *pushButton_X_10;
-    QPushButton *pushButton_X_11;
-    QPushButton *pushButton_X_12;
-    QPushButton *pushButton_X_13;
+    QPushButton *pushButton_sin;
+    QPushButton *pushButton_cos;
+    QPushButton *pushButton_tan;
+    QPushButton *pushButton_asin;
+    QPushButton *pushButton_acos;
+    QPushButton *pushButton_atan;
+    QPushButton *pushButton_expo;
+    QPushButton *pushButton_sqrt;
+    QPushButton *pushButton_percent;
+    QPushButton *pushButton_log;
+    QPushButton *pushButton_ln;
+    QPushButton *pushButton_mod;
     QLabel *result_show_2;
 
     void setupUi(QMainWindow *MainWindow)
@@ -325,10 +325,10 @@ public:
 "QPushButton:pressed {\n"
 "	background-color: qlineargradient(x1: 0, y1: 0, x2: 0,  y2: 1, stop: 0 #BEBEBE, stop: 1 #D7D7D7);\n"
 "}"));
-        pushButton_loan = new QPushButton(centralwidget);
-        pushButton_loan->setObjectName("pushButton_loan");
-        pushButton_loan->setGeometry(QRect(160, 440, 71, 31));
-        pushButton_loan->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_credit = new QPushButton(centralwidget);
+        pushButton_credit->setObjectName("pushButton_credit");
+        pushButton_credit->setGeometry(QRect(160, 440, 71, 31));
+        pushButton_credit->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* \320\236\321\201\320\275\320\276\320\262\320\275\321\213\320\265 \320\275\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270 */\n"
 "    border: 2px solid #8f8f91;\n"
 "    border-radius: 6px;\n"
@@ -486,22 +486,22 @@ public:
         label_equal = new QLabel(centralwidget);
         label_equal->setObjectName("label_equal");
         label_equal->setGeometry(QRect(38, 156, 16, 16));
-        pushButton_X_2 = new QPushButton(centralwidget);
-        pushButton_X_2->setObjectName("pushButton_X_2");
-        pushButton_X_2->setGeometry(QRect(0, 72, 51, 21));
-        pushButton_X_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_sin = new QPushButton(centralwidget);
+        pushButton_sin->setObjectName("pushButton_sin");
+        pushButton_sin->setGeometry(QRect(0, 72, 51, 21));
+        pushButton_sin->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -509,22 +509,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_3 = new QPushButton(centralwidget);
-        pushButton_X_3->setObjectName("pushButton_X_3");
-        pushButton_X_3->setGeometry(QRect(62, 72, 51, 21));
-        pushButton_X_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_cos = new QPushButton(centralwidget);
+        pushButton_cos->setObjectName("pushButton_cos");
+        pushButton_cos->setGeometry(QRect(62, 72, 51, 21));
+        pushButton_cos->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -532,22 +532,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_4 = new QPushButton(centralwidget);
-        pushButton_X_4->setObjectName("pushButton_X_4");
-        pushButton_X_4->setGeometry(QRect(125, 72, 51, 21));
-        pushButton_X_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_tan = new QPushButton(centralwidget);
+        pushButton_tan->setObjectName("pushButton_tan");
+        pushButton_tan->setGeometry(QRect(125, 72, 51, 21));
+        pushButton_tan->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -555,22 +555,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_5 = new QPushButton(centralwidget);
-        pushButton_X_5->setObjectName("pushButton_X_5");
-        pushButton_X_5->setGeometry(QRect(0, 98, 51, 21));
-        pushButton_X_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_asin = new QPushButton(centralwidget);
+        pushButton_asin->setObjectName("pushButton_asin");
+        pushButton_asin->setGeometry(QRect(0, 98, 51, 21));
+        pushButton_asin->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -578,22 +578,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_6 = new QPushButton(centralwidget);
-        pushButton_X_6->setObjectName("pushButton_X_6");
-        pushButton_X_6->setGeometry(QRect(62, 98, 51, 21));
-        pushButton_X_6->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_acos = new QPushButton(centralwidget);
+        pushButton_acos->setObjectName("pushButton_acos");
+        pushButton_acos->setGeometry(QRect(62, 98, 51, 21));
+        pushButton_acos->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -601,22 +601,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_7 = new QPushButton(centralwidget);
-        pushButton_X_7->setObjectName("pushButton_X_7");
-        pushButton_X_7->setGeometry(QRect(125, 98, 51, 21));
-        pushButton_X_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_atan = new QPushButton(centralwidget);
+        pushButton_atan->setObjectName("pushButton_atan");
+        pushButton_atan->setGeometry(QRect(125, 98, 51, 21));
+        pushButton_atan->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -624,22 +624,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_8 = new QPushButton(centralwidget);
-        pushButton_X_8->setObjectName("pushButton_X_8");
-        pushButton_X_8->setGeometry(QRect(0, 124, 51, 21));
-        pushButton_X_8->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_expo = new QPushButton(centralwidget);
+        pushButton_expo->setObjectName("pushButton_expo");
+        pushButton_expo->setGeometry(QRect(0, 124, 51, 21));
+        pushButton_expo->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -647,22 +647,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_9 = new QPushButton(centralwidget);
-        pushButton_X_9->setObjectName("pushButton_X_9");
-        pushButton_X_9->setGeometry(QRect(62, 124, 51, 21));
-        pushButton_X_9->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_sqrt = new QPushButton(centralwidget);
+        pushButton_sqrt->setObjectName("pushButton_sqrt");
+        pushButton_sqrt->setGeometry(QRect(62, 124, 51, 21));
+        pushButton_sqrt->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -670,22 +670,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_10 = new QPushButton(centralwidget);
-        pushButton_X_10->setObjectName("pushButton_X_10");
-        pushButton_X_10->setGeometry(QRect(125, 124, 51, 21));
-        pushButton_X_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_percent = new QPushButton(centralwidget);
+        pushButton_percent->setObjectName("pushButton_percent");
+        pushButton_percent->setGeometry(QRect(125, 124, 51, 21));
+        pushButton_percent->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -693,22 +693,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_11 = new QPushButton(centralwidget);
-        pushButton_X_11->setObjectName("pushButton_X_11");
-        pushButton_X_11->setGeometry(QRect(190, 72, 51, 21));
-        pushButton_X_11->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_log = new QPushButton(centralwidget);
+        pushButton_log->setObjectName("pushButton_log");
+        pushButton_log->setGeometry(QRect(190, 72, 51, 21));
+        pushButton_log->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -716,22 +716,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_12 = new QPushButton(centralwidget);
-        pushButton_X_12->setObjectName("pushButton_X_12");
-        pushButton_X_12->setGeometry(QRect(190, 98, 51, 21));
-        pushButton_X_12->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_ln = new QPushButton(centralwidget);
+        pushButton_ln->setObjectName("pushButton_ln");
+        pushButton_ln->setGeometry(QRect(190, 98, 51, 21));
+        pushButton_ln->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -739,22 +739,22 @@ public:
 "    border: 1px solid #303030; /* \320\242\320\265\320\274\320\275\320\265\320\265 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 \320\277\321\200\320\270 \320\275\320\260\320\266\320\260\321\202\320\270\320\270 */\n"
 "}\n"
 ""));
-        pushButton_X_13 = new QPushButton(centralwidget);
-        pushButton_X_13->setObjectName("pushButton_X_13");
-        pushButton_X_13->setGeometry(QRect(190, 124, 51, 21));
-        pushButton_X_13->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_mod = new QPushButton(centralwidget);
+        pushButton_mod->setObjectName("pushButton_mod");
+        pushButton_mod->setGeometry(QRect(190, 124, 51, 21));
+        pushButton_mod->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    font-size: 16px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
-"    font-family: 'Segoe UI', Arial, sans-serif; /* \320\250\321\200\320\270\321\204\321\202 */\n"
+"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202 */\n"
 "    border: 1px solid #404040; /* \320\242\320\276\320\275\320\272\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */\n"
 "    text-align: center; /* \320\222\321\213\321\200\320\260\320\262\320\275\320\270\320\262\320\260\320\275\320\270\320\265 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275"
-                        "\320\276\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
+"    background-color: #72aad6; /* \320\235\320\265\320\274\320\275\320\276"
+                        "\320\263\320\276 \321\201\320\262\320\265\321\202\320\273\320\265\320\265 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -804,24 +804,24 @@ public:
         pushButton_signChange->raise();
         result_show->raise();
         pushButton_brackets->raise();
-        pushButton_loan->raise();
+        pushButton_credit->raise();
         pushButton_deposit->raise();
         pushButton_00->raise();
         pushButton_graph->raise();
         pushButton_X->raise();
         label_equal->raise();
-        pushButton_X_2->raise();
-        pushButton_X_3->raise();
-        pushButton_X_4->raise();
-        pushButton_X_5->raise();
-        pushButton_X_6->raise();
-        pushButton_X_7->raise();
-        pushButton_X_8->raise();
-        pushButton_X_9->raise();
-        pushButton_X_10->raise();
-        pushButton_X_11->raise();
-        pushButton_X_12->raise();
-        pushButton_X_13->raise();
+        pushButton_sin->raise();
+        pushButton_cos->raise();
+        pushButton_tan->raise();
+        pushButton_asin->raise();
+        pushButton_acos->raise();
+        pushButton_atan->raise();
+        pushButton_expo->raise();
+        pushButton_sqrt->raise();
+        pushButton_percent->raise();
+        pushButton_log->raise();
+        pushButton_ln->raise();
+        pushButton_mod->raise();
         result_show_2->raise();
 
         retranslateUi(MainWindow);
@@ -853,25 +853,25 @@ public:
         pushButton_signChange->setText(QCoreApplication::translate("MainWindow", "+/-", nullptr));
         result_show->setText(QString());
         pushButton_brackets->setText(QCoreApplication::translate("MainWindow", "()", nullptr));
-        pushButton_loan->setText(QCoreApplication::translate("MainWindow", "Credit", nullptr));
+        pushButton_credit->setText(QCoreApplication::translate("MainWindow", "Credit", nullptr));
         pushButton_deposit->setText(QCoreApplication::translate("MainWindow", "Deposit", nullptr));
         pushButton_00->setText(QCoreApplication::translate("MainWindow", "00", nullptr));
         background_grey->setText(QString());
         pushButton_graph->setText(QCoreApplication::translate("MainWindow", "Graph", nullptr));
         pushButton_X->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
         label_equal->setText(QCoreApplication::translate("MainWindow", "=", nullptr));
-        pushButton_X_2->setText(QCoreApplication::translate("MainWindow", "sin", nullptr));
-        pushButton_X_3->setText(QCoreApplication::translate("MainWindow", "cos", nullptr));
-        pushButton_X_4->setText(QCoreApplication::translate("MainWindow", "tan", nullptr));
-        pushButton_X_5->setText(QCoreApplication::translate("MainWindow", "asin", nullptr));
-        pushButton_X_6->setText(QCoreApplication::translate("MainWindow", "acos", nullptr));
-        pushButton_X_7->setText(QCoreApplication::translate("MainWindow", "atan", nullptr));
-        pushButton_X_8->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
-        pushButton_X_9->setText(QCoreApplication::translate("MainWindow", "sqrt", nullptr));
-        pushButton_X_10->setText(QCoreApplication::translate("MainWindow", "%", nullptr));
-        pushButton_X_11->setText(QCoreApplication::translate("MainWindow", "log", nullptr));
-        pushButton_X_12->setText(QCoreApplication::translate("MainWindow", "ln", nullptr));
-        pushButton_X_13->setText(QCoreApplication::translate("MainWindow", "mod", nullptr));
+        pushButton_sin->setText(QCoreApplication::translate("MainWindow", "sin", nullptr));
+        pushButton_cos->setText(QCoreApplication::translate("MainWindow", "cos", nullptr));
+        pushButton_tan->setText(QCoreApplication::translate("MainWindow", "tan", nullptr));
+        pushButton_asin->setText(QCoreApplication::translate("MainWindow", "asin", nullptr));
+        pushButton_acos->setText(QCoreApplication::translate("MainWindow", "acos", nullptr));
+        pushButton_atan->setText(QCoreApplication::translate("MainWindow", "atan", nullptr));
+        pushButton_expo->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
+        pushButton_sqrt->setText(QCoreApplication::translate("MainWindow", "sqrt", nullptr));
+        pushButton_percent->setText(QCoreApplication::translate("MainWindow", "%", nullptr));
+        pushButton_log->setText(QCoreApplication::translate("MainWindow", "log", nullptr));
+        pushButton_ln->setText(QCoreApplication::translate("MainWindow", "ln", nullptr));
+        pushButton_mod->setText(QCoreApplication::translate("MainWindow", "mod", nullptr));
         result_show_2->setText(QString());
     } // retranslateUi
 

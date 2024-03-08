@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_AC, &QPushButton::clicked, this, &MainWindow::on_pushButton_AC_clicked);
     connect(ui->pushButton_dot, &QPushButton::clicked, this, &MainWindow::on_pushButton_dot_clicked);
     connect(ui->pushButton_equal, &QPushButton::clicked, this, &MainWindow::on_pushButton_equal_clicked);
+    connect(ui->pushButton_brackets, &QPushButton::clicked, this, &MainWindow::on_pushButton_brackets_clicked);
 
 }
 
@@ -49,30 +50,33 @@ void MainWindow::digits_numbers()
 {
     QPushButton *button = (QPushButton *)sender();
 
-    QString new_label = (ui->result_show->text() + button->text());
-    QString new_label_no_spaces = new_label.remove(' ');
-
-    static QRegularExpression regex("[^0-9\\.]");
-    QStringList numbers = new_label_no_spaces.split(regex, Qt::SkipEmptyParts);
-    QString last_number = numbers.isEmpty() ? QString() : numbers.last();
-
-    QString last_number_no_dot = last_number;
-    int digitCount = last_number_no_dot.remove('.').length();
-    bool isLengthValid = digitCount<=15;
-    bool isDecimalValid = true;
-
-    if(last_number.contains('.'))
+    if(ui->result_show->text().isEmpty() || (!ui->result_show->text().isEmpty() && ui->result_show->text().right(1).at(0) != QChar(')')))
     {
-        int decimalIndex = last_number.indexOf('.');
-        QString decimalPart = last_number.mid(decimalIndex + 1);
-        int decimalLength = decimalPart.length();
-        isDecimalValid = decimalLength <= 10;
-    }
+        QString new_label = (ui->result_show->text() + button->text());
+        QString new_label_no_spaces = new_label.remove(' ');
 
-    if(isLengthValid && isDecimalValid)
-    {
-        new_label = formatExpressionWithSpaces(new_label);
-        ui->result_show->setText(new_label);
+        static QRegularExpression regex("[^0-9\\.]");
+        QStringList numbers = new_label_no_spaces.split(regex, Qt::SkipEmptyParts);
+        QString last_number = numbers.isEmpty() ? QString() : numbers.last();
+
+        QString last_number_no_dot = last_number;
+        int digitCount = last_number_no_dot.remove('.').length();
+        bool isLengthValid = digitCount<=15;
+        bool isDecimalValid = true;
+
+        if(last_number.contains('.'))
+        {
+            int decimalIndex = last_number.indexOf('.');
+            QString decimalPart = last_number.mid(decimalIndex + 1);
+            int decimalLength = decimalPart.length();
+            isDecimalValid = decimalLength <= 10;
+        }
+
+        if(isLengthValid && isDecimalValid)
+        {
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
     }
 }
 
@@ -236,44 +240,89 @@ void MainWindow::on_pushButton_AC_clicked()
 void MainWindow::on_pushButton_equal_clicked()
 {
     QString qtInfix = ui->result_show->text().remove(' ');
+
     if(!qtInfix.isEmpty() && (qtInfix.right(1).at(0) == QChar(')') || qtInfix.right(1).at(0).isDigit()))
     {
         QByteArray byteArray = qtInfix.toUtf8();
         char* infix = byteArray.data();
-        char *postfix = tokenize(infix);
-        double x = 0;
-        double result;
-        bool noDivByZero = calculatePostfix(postfix, &result, x);
-        free(postfix);
-
-        if(noDivByZero)
+        if(hasBalancedParenthesis(infix)==0)
         {
-            if (std::abs(result - qRound(result)) < 0.0000000001) {
-                result = qRound(result);
+            char *postfix = tokenize(infix);
+            double x = 0;
+            double result;
+            bool noDivByZero = calculatePostfix(postfix, &result, x);
+            free(postfix);
+
+            if(noDivByZero)
+            {
+                if (std::abs(result - qRound(result)) < 0.0000000001) {
+                    result = qRound(result);
+                }
+
+                //устраняем проблемы с лишними нулями при округлении
+                QString resultString = QString::number(result, 'f',10);
+                resultString = formatExpressionWithSpaces(resultString);
+
+                //убираем лишние нули и точку если она последняя
+                static QRegularExpression regexZero("0+$");
+                static QRegularExpression regexDot("\\.$");
+                resultString.remove(regexZero);
+                resultString.remove(regexDot);
+
+                ui->result_show->setText(resultString);
+            } else
+            {
+                QMessageBox msgBox;
+                QString imagePath = QCoreApplication::applicationDirPath() + "/../../../../images/divByZero.png";
+                QPixmap pixmap(imagePath);
+
+                msgBox.setWindowTitle("Division error");
+                msgBox.setText("Can not divide by zero!");
+                msgBox.setIconPixmap(pixmap);
+                msgBox.exec();
             }
-
-            //устраняем проблемы с лишними нулями при округлении
-            QString resultString = QString::number(result, 'f',10);
-            resultString = formatExpressionWithSpaces(resultString);
-
-            //убираем лишние нули и точку если она последняя
-            static QRegularExpression regexZero("0+$");
-            static QRegularExpression regexDot("\\.$");
-            resultString.remove(regexZero);
-            resultString.remove(regexDot);
-
-            ui->result_show->setText(resultString);
-        } else
-        {
-            QMessageBox msgBox;
-            QString imagePath = QCoreApplication::applicationDirPath() + "/../../../../images/divByZero.png";
-            QPixmap pixmap(imagePath);
-
-            msgBox.setWindowTitle("Division error");
-            msgBox.setText("Can not divide by zero!");
-            msgBox.setIconPixmap(pixmap);
-            msgBox.exec();
         }
     }
 }
 
+
+void MainWindow::on_pushButton_brackets_clicked()
+{
+    QString qtInfix = ui->result_show->text().remove(' ');
+    if(qtInfix.isEmpty() || (!qtInfix.isEmpty() && brackets_char_checker(qtInfix.right(1).at(0))))
+    {
+        QByteArray byteArray = qtInfix.toUtf8();
+        char* infix = byteArray.data();
+        if (hasBalancedParenthesis(infix) == 0 && (qtInfix.isEmpty() || (!qtInfix.isEmpty() && !qtInfix.right(1).at(0).isDigit() && qtInfix.right(1).at(0) != QChar(')'))))
+        {
+            qtInfix += "(";
+            ui->result_show->setText(qtInfix);
+        } else if (hasBalancedParenthesis(infix) == 1)
+        {
+            if(qtInfix.right(1).at(0) == '(')
+            {
+                qtInfix += "(";
+                ui->result_show->setText(qtInfix);
+            }
+            else
+            {
+                qtInfix += ")";
+                ui->result_show->setText(qtInfix);
+            }
+        }
+    }
+}
+
+bool MainWindow::brackets_char_checker(QChar x)
+{
+    bool flag = false;
+    if(x == QChar(')')) flag = true;
+    else if(x.isDigit()) flag = true;
+    else if(x == QChar('+')) flag = true;
+    else if(x == QChar('-')) flag = true;
+    else if(x == QChar('*')) flag = true;
+    else if(x == QChar('/')) flag = true;
+    else if(x == QChar('^')) flag = true;
+    else if(x == QChar('(')) flag = true;
+    return flag;
+}

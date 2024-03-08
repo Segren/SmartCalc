@@ -33,6 +33,7 @@ private:
     Ui::MainWindow *ui;
     QString formatExpressionWithSpaces(const QString &expression);
     QString formatNumberWithSpaces(const QString &number);
+    bool brackets_char_checker(QChar x);
 
 private slots:
     void digits_numbers();
@@ -40,5 +41,6 @@ private slots:
     void operations();
     void on_pushButton_AC_clicked();
     void on_pushButton_equal_clicked();
+    void on_pushButton_brackets_clicked();
 };
 #endif // MAINWINDOW_H

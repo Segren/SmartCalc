@@ -538,7 +538,7 @@ QPushButton:pressed {
      <string>()</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_loan">
+   <widget class="QPushButton" name="pushButton_credit">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -791,7 +791,7 @@ QPushButton:pressed {
      <string>=</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_2">
+   <widget class="QPushButton" name="pushButton_sin">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -806,7 +806,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -825,7 +825,7 @@ QPushButton:pressed {
      <string>sin</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_3">
+   <widget class="QPushButton" name="pushButton_cos">
     <property name="geometry">
      <rect>
       <x>62</x>
@@ -840,7 +840,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -859,7 +859,7 @@ QPushButton:pressed {
      <string>cos</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_4">
+   <widget class="QPushButton" name="pushButton_tan">
     <property name="geometry">
      <rect>
       <x>125</x>
@@ -874,7 +874,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -893,7 +893,7 @@ QPushButton:pressed {
      <string>tan</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_5">
+   <widget class="QPushButton" name="pushButton_asin">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -908,7 +908,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -927,7 +927,7 @@ QPushButton:pressed {
      <string>asin</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_6">
+   <widget class="QPushButton" name="pushButton_acos">
     <property name="geometry">
      <rect>
       <x>62</x>
@@ -942,7 +942,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -961,7 +961,7 @@ QPushButton:pressed {
      <string>acos</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_7">
+   <widget class="QPushButton" name="pushButton_atan">
     <property name="geometry">
      <rect>
       <x>125</x>
@@ -976,7 +976,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -995,7 +995,7 @@ QPushButton:pressed {
      <string>atan</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_8">
+   <widget class="QPushButton" name="pushButton_expo">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -1010,7 +1010,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -1029,7 +1029,7 @@ QPushButton:pressed {
      <string>^</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_9">
+   <widget class="QPushButton" name="pushButton_sqrt">
     <property name="geometry">
      <rect>
       <x>62</x>
@@ -1044,7 +1044,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -1063,7 +1063,7 @@ QPushButton:pressed {
      <string>sqrt</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_10">
+   <widget class="QPushButton" name="pushButton_percent">
     <property name="geometry">
      <rect>
       <x>125</x>
@@ -1078,7 +1078,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -1097,7 +1097,7 @@ QPushButton:pressed {
      <string>%</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_11">
+   <widget class="QPushButton" name="pushButton_log">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -1112,7 +1112,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -1131,7 +1131,7 @@ QPushButton:pressed {
      <string>log</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_12">
+   <widget class="QPushButton" name="pushButton_ln">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -1146,7 +1146,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -1165,7 +1165,7 @@ QPushButton:pressed {
      <string>ln</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_X_13">
+   <widget class="QPushButton" name="pushButton_mod">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -1180,7 +1180,7 @@ QPushButton:pressed {
     color: white; /* Белый текст */
     border-radius: 6px; /* Слегка скругленные углы */
     font-size: 16px; /* Размер шрифта */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Шрифт */
+    font-family: 'Digital-7', Monospace; /* Шрифт */
     border: 1px solid #404040; /* Тонкая граница */
     text-align: center; /* Выравнивание текста */
 }
@@ -1256,24 +1256,24 @@ QPushButton:pressed {
    <zorder>pushButton_signChange</zorder>
    <zorder>result_show</zorder>
    <zorder>pushButton_brackets</zorder>
-   <zorder>pushButton_loan</zorder>
+   <zorder>pushButton_credit</zorder>
    <zorder>pushButton_deposit</zorder>
    <zorder>pushButton_00</zorder>
    <zorder>pushButton_graph</zorder>
    <zorder>pushButton_X</zorder>
    <zorder>label_equal</zorder>
-   <zorder>pushButton_X_2</zorder>
-   <zorder>pushButton_X_3</zorder>
-   <zorder>pushButton_X_4</zorder>
-   <zorder>pushButton_X_5</zorder>
-   <zorder>pushButton_X_6</zorder>
-   <zorder>pushButton_X_7</zorder>
-   <zorder>pushButton_X_8</zorder>
-   <zorder>pushButton_X_9</zorder>
-   <zorder>pushButton_X_10</zorder>
-   <zorder>pushButton_X_11</zorder>
-   <zorder>pushButton_X_12</zorder>
-   <zorder>pushButton_X_13</zorder>
+   <zorder>pushButton_sin</zorder>
+   <zorder>pushButton_cos</zorder>
+   <zorder>pushButton_tan</zorder>
+   <zorder>pushButton_asin</zorder>
+   <zorder>pushButton_acos</zorder>
+   <zorder>pushButton_atan</zorder>
+   <zorder>pushButton_expo</zorder>
+   <zorder>pushButton_sqrt</zorder>
+   <zorder>pushButton_percent</zorder>
+   <zorder>pushButton_log</zorder>
+   <zorder>pushButton_ln</zorder>
+   <zorder>pushButton_mod</zorder>
    <zorder>result_show_2</zorder>
   </widget>
  </widget>
