@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(this->width(), this->height());
 
+    connect(ui->pushButton_00, SIGNAL(clicked()), this, SLOT(digits_numbers()));
     connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digits_numbers()));
     connect(ui->pushButton_1, SIGNAL(clicked()), this, SLOT(digits_numbers()));
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(digits_numbers()));
@@ -326,3 +327,4 @@ bool MainWindow::brackets_char_checker(QChar x)
     else if(x == QChar('(')) flag = true;
     return flag;
 }
+
