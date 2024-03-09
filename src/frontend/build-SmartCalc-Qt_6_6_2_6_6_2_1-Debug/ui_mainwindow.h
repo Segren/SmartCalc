@@ -75,7 +75,7 @@ public:
         result_show->setObjectName("result_show");
         result_show->setGeometry(QRect(0, 0, 252, 69));
         QFont font;
-        font.setFamilies({QString::fromUtf8("Digital-7")});
+        font.setFamilies({QString::fromUtf8("Osaka")});
         font.setPointSize(20);
         result_show->setFont(font);
         result_show->setStyleSheet(QString::fromUtf8("QLabel {\n"
@@ -110,6 +110,10 @@ public:
         pushButton_tan = new QPushButton(centralwidget);
         pushButton_tan->setObjectName("pushButton_tan");
         pushButton_tan->setGeometry(QRect(125, 74, 51, 21));
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Osaka")});
+        font2.setItalic(false);
+        pushButton_tan->setFont(font2);
         pushButton_tan->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -132,6 +136,7 @@ public:
         pushButton_acos = new QPushButton(centralwidget);
         pushButton_acos->setObjectName("pushButton_acos");
         pushButton_acos->setGeometry(QRect(62, 100, 51, 21));
+        pushButton_acos->setFont(font2);
         pushButton_acos->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -154,6 +159,7 @@ public:
         pushButton_atan = new QPushButton(centralwidget);
         pushButton_atan->setObjectName("pushButton_atan");
         pushButton_atan->setGeometry(QRect(125, 100, 51, 21));
+        pushButton_atan->setFont(font2);
         pushButton_atan->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -176,6 +182,7 @@ public:
         pushButton_cos = new QPushButton(centralwidget);
         pushButton_cos->setObjectName("pushButton_cos");
         pushButton_cos->setGeometry(QRect(62, 74, 51, 21));
+        pushButton_cos->setFont(font2);
         pushButton_cos->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -198,6 +205,7 @@ public:
         pushButton_sqrt = new QPushButton(centralwidget);
         pushButton_sqrt->setObjectName("pushButton_sqrt");
         pushButton_sqrt->setGeometry(QRect(62, 126, 51, 21));
+        pushButton_sqrt->setFont(font2);
         pushButton_sqrt->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -220,6 +228,7 @@ public:
         pushButton_asin = new QPushButton(centralwidget);
         pushButton_asin->setObjectName("pushButton_asin");
         pushButton_asin->setGeometry(QRect(0, 100, 51, 21));
+        pushButton_asin->setFont(font2);
         pushButton_asin->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -242,6 +251,7 @@ public:
         pushButton_percent = new QPushButton(centralwidget);
         pushButton_percent->setObjectName("pushButton_percent");
         pushButton_percent->setGeometry(QRect(125, 126, 51, 21));
+        pushButton_percent->setFont(font2);
         pushButton_percent->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -264,6 +274,7 @@ public:
         pushButton_mod = new QPushButton(centralwidget);
         pushButton_mod->setObjectName("pushButton_mod");
         pushButton_mod->setGeometry(QRect(190, 126, 51, 21));
+        pushButton_mod->setFont(font2);
         pushButton_mod->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -286,6 +297,7 @@ public:
         pushButton_log = new QPushButton(centralwidget);
         pushButton_log->setObjectName("pushButton_log");
         pushButton_log->setGeometry(QRect(190, 74, 51, 21));
+        pushButton_log->setFont(font2);
         pushButton_log->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -308,6 +320,7 @@ public:
         pushButton_ln = new QPushButton(centralwidget);
         pushButton_ln->setObjectName("pushButton_ln");
         pushButton_ln->setGeometry(QRect(190, 100, 51, 21));
+        pushButton_ln->setFont(font2);
         pushButton_ln->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -330,6 +343,7 @@ public:
         pushButton_sin = new QPushButton(centralwidget);
         pushButton_sin->setObjectName("pushButton_sin");
         pushButton_sin->setGeometry(QRect(0, 74, 51, 21));
+        pushButton_sin->setFont(font2);
         pushButton_sin->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -352,6 +366,7 @@ public:
         pushButton_expo = new QPushButton(centralwidget);
         pushButton_expo->setObjectName("pushButton_expo");
         pushButton_expo->setGeometry(QRect(0, 126, 51, 21));
+        pushButton_expo->setFont(font2);
         pushButton_expo->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -407,13 +422,15 @@ public:
         result_show_2 = new QLabel(centralwidget);
         result_show_2->setObjectName("result_show_2");
         result_show_2->setGeometry(QRect(51, 155, 161, 30));
-        result_show_2->setFont(font);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Academy Engraved LET")});
+        font3.setPointSize(20);
+        result_show_2->setFont(font3);
         result_show_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	qproperty-alignment: 'AlignVCenter | AlignRight';\n"
 "    color: white; /* \320\246\320\262\320\265\321\202 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
 "    background-color: rgb(215, 215, 215); /* \320\244\320\276\320\275\320\276\320\262\321\213\320\271 \321\206\320\262\320\265\321\202 */\n"
 "	border-radius: 6px; \n"
-"    font-family: 'Digital-7', Monospace; /* \320\250\321\200\320\270\321\204\321\202\321\213 */\n"
 "    font-size: 20pt; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
 "    padding: 8px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\265 \320\276\321\202\321\201\321\202\321\203\320\277\321\213 */\n"
 "    border: 1px solid #333; /* \320\223\321\200\320\260\320\275\320\270\321\206\320\260 \320\262\320\276\320\272\321\200\321\203\320\263 QLabel */\n"
@@ -423,11 +440,11 @@ public:
         pushButton_back = new QPushButton(centralwidget);
         pushButton_back->setObjectName("pushButton_back");
         pushButton_back->setGeometry(QRect(212, 155, 31, 30));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Academy Engraved LET")});
-        font2.setBold(true);
-        font2.setItalic(false);
-        pushButton_back->setFont(font2);
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Academy Engraved LET")});
+        font4.setBold(true);
+        font4.setItalic(false);
+        pushButton_back->setFont(font4);
         pushButton_back->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* \320\236\321\201\320\275\320\276\320\262\320\275\321\213\320\265 \320\275\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270 */\n"
 "\n"
@@ -463,9 +480,9 @@ public:
         pushButton_signChange = new QPushButton(centralwidget);
         pushButton_signChange->setObjectName("pushButton_signChange");
         pushButton_signChange->setGeometry(QRect(60, 185, 61, 51));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("Academy Engraved LET")});
-        pushButton_signChange->setFont(font3);
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Academy Engraved LET")});
+        pushButton_signChange->setFont(font5);
         pushButton_signChange->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	background-color: rgb(215, 215, 215);\n"
 "	border: 1px solid gray;\n"
@@ -494,10 +511,10 @@ public:
         pushButton_0 = new QPushButton(centralwidget);
         pushButton_0->setObjectName("pushButton_0");
         pushButton_0->setGeometry(QRect(60, 385, 61, 51));
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("Academy Engraved LET")});
-        font4.setPointSize(15);
-        pushButton_0->setFont(font4);
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Academy Engraved LET")});
+        font6.setPointSize(15);
+        pushButton_0->setFont(font6);
         pushButton_0->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: 1px solid gray;\n"
 "}\n"
@@ -507,7 +524,7 @@ public:
         pushButton_AC = new QPushButton(centralwidget);
         pushButton_AC->setObjectName("pushButton_AC");
         pushButton_AC->setGeometry(QRect(0, 185, 61, 51));
-        pushButton_AC->setFont(font3);
+        pushButton_AC->setFont(font5);
         pushButton_AC->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	background-color: rgb(215, 215, 215);\n"
 "	border: 1px solid gray;\n"
@@ -537,7 +554,7 @@ public:
         pushButton_00 = new QPushButton(centralwidget);
         pushButton_00->setObjectName("pushButton_00");
         pushButton_00->setGeometry(QRect(0, 385, 61, 51));
-        pushButton_00->setFont(font4);
+        pushButton_00->setFont(font6);
         pushButton_00->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: 1px solid gray;\n"
 "}\n"
@@ -556,7 +573,7 @@ public:
         pushButton_dot = new QPushButton(centralwidget);
         pushButton_dot->setObjectName("pushButton_dot");
         pushButton_dot->setGeometry(QRect(120, 385, 61, 51));
-        pushButton_dot->setFont(font3);
+        pushButton_dot->setFont(font5);
         pushButton_dot->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	background-color: rgb(215, 215, 215);\n"
 "	border: 1px solid gray;\n"
