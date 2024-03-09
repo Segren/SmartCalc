@@ -307,7 +307,8 @@ bool calculatePostfix(char *postfix, double *result, double x)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                pushCalcStack(&stack, sin(num));
+                double radians = num * M_PI / 180.0;
+                pushCalcStack(&stack, sin(radians));
             }
             else if (strcmp(token, "cos") == 0)
             {
@@ -432,7 +433,7 @@ bool calculatePostfix(char *postfix, double *result, double x)
 
 // int main(void)
 // {
-//     char *input = "3x3";
+//     char *input = "sin(1)";
 //     if (hasBalancedParenthesis(input) == 0)
 //     {
 //         char *postfix = tokenize(input);

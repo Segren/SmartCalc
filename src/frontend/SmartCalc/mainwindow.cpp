@@ -7,10 +7,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    int fontId = QFontDatabase::addApplicationFont(":new/fonts/digital-7.ttf");
-    QString fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
-    QFont font(fontFamily);
-    ui->result_show->setFont(font);
+    //на случай добавления кастомного шрифта
+    // int fontId = QFontDatabase::addApplicationFont(":/new/fonts/digital-7.ttf");
+    // QString fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
+    // QFont font(fontFamily);
+    // ui->result_show->setFont(font);
 
     // Задать фиксированный размер для главного окна
     ui->setupUi(this);
@@ -37,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_dot, &QPushButton::clicked, this, &MainWindow::on_pushButton_dot_clicked);
     connect(ui->pushButton_equal, &QPushButton::clicked, this, &MainWindow::on_pushButton_equal_clicked);
     connect(ui->pushButton_brackets, &QPushButton::clicked, this, &MainWindow::on_pushButton_brackets_clicked);
+    connect(ui->pushButton_sin, SIGNAL(clicked()), this, SLOT(operations()));
 
 }
 
@@ -163,13 +165,12 @@ void MainWindow::operations()
 
     QString new_label;
 
-    if(button->text() == "+/-")
+    if(button->text() == "+/-" && current_text_no_spaces.right(1).at(0) != QChar(')'))
     {
         static QRegularExpression regex("(\\-?\\(\\-?\\d+\\.?\\d*)$|(-?\\d+\\.?\\d*)$");
         QRegularExpressionMatch match = regex.match(current_text_no_spaces);
         if(match.hasMatch())
         {
-            //qDebug() << match;
             QString lastNum = match.captured(0);
             if(lastNum.startsWith("(-"))
             {
@@ -226,6 +227,14 @@ void MainWindow::operations()
         if(!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0).isDigit() || current_text_no_spaces.right(1).at(0) == QChar(')')))
         {
             new_label = (current_text_no_spaces + "/");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "sin")
+    {
+        if((!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0) != QChar('.'))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "sin(");
             new_label = formatExpressionWithSpaces(new_label);
             ui->result_show->setText(new_label);
         }

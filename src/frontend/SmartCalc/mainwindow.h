@@ -7,17 +7,17 @@
 #include <QMessageBox>
 #include <QFontDatabase>
 
-
-
-extern "C"{
+extern "C"
+{
 #include "../../backend/s21_smart_calc.h"
 #include "../../backend/ipn_converter.h"
 #include "../../backend/stack.h"
 }
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
+namespace Ui
+{
+    class MainWindow;
 }
 QT_END_NAMESPACE
 
