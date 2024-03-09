@@ -1193,7 +1193,7 @@ ipn_converter.o: ../../backend/ipn_converter.c ../../backend/ipn_converter.h \
 		../../backend/stack.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o ipn_converter.o ../../backend/ipn_converter.c
 
-s21_smart_calc.o: ../../backend/s21_smart_calc.c ../../backend/s21_smart_calc.h
+s21_smart_calc.o: ../../backend/s21_smart_calc.c 
 	$(CC) -c $(CFLAGS) $(INCPATH) -o s21_smart_calc.o ../../backend/s21_smart_calc.c
 
 stack.o: ../../backend/stack.c ../../backend/stack.h \

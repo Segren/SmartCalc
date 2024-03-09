@@ -38,8 +38,18 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_dot, &QPushButton::clicked, this, &MainWindow::on_pushButton_dot_clicked);
     connect(ui->pushButton_equal, &QPushButton::clicked, this, &MainWindow::on_pushButton_equal_clicked);
     connect(ui->pushButton_brackets, &QPushButton::clicked, this, &MainWindow::on_pushButton_brackets_clicked);
+    connect(ui->pushButton_percent, &QPushButton::clicked, this, &MainWindow::on_pushButton_percent_clicked);
     connect(ui->pushButton_sin, SIGNAL(clicked()), this, SLOT(operations()));
-
+    connect(ui->pushButton_cos, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_tan, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_asin, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_acos, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_atan, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_sqrt, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_log, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_ln, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_expo, SIGNAL(clicked()), this, SLOT(operations()));
+    connect(ui->pushButton_mod, SIGNAL(clicked()), this, SLOT(operations()));
 }
 
 
@@ -232,9 +242,89 @@ void MainWindow::operations()
         }
     } else if(button->text() == "sin")
     {
-        if((!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0) != QChar('.'))) || current_text_no_spaces.isEmpty())
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
         {
             new_label = (current_text_no_spaces + "sin(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "cos")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "cos(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "tan")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "tan(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "asin")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "asin(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "acos")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "acos(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "atan")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "atan(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "sqrt")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "sqrt(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "log")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "log(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "ln")
+    {
+        if((!current_text_no_spaces.isEmpty() && (func_char_checker(current_text_no_spaces.right(1).at(0)))) || current_text_no_spaces.isEmpty())
+        {
+            new_label = (current_text_no_spaces + "ln(");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "^")
+    {
+        if(!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0).isDigit() || current_text_no_spaces.right(1).at(0) == QChar(')')))
+        {
+            new_label = (current_text_no_spaces + "^");
+            new_label = formatExpressionWithSpaces(new_label);
+            ui->result_show->setText(new_label);
+        }
+    } else if(button->text() == "mod")
+    {
+        if(!current_text_no_spaces.isEmpty() && (current_text_no_spaces.right(1).at(0).isDigit() || current_text_no_spaces.right(1).at(0) == QChar(')')))
+        {
+            new_label = (current_text_no_spaces + "%");
             new_label = formatExpressionWithSpaces(new_label);
             ui->result_show->setText(new_label);
         }
@@ -309,7 +399,7 @@ void MainWindow::on_pushButton_brackets_clicked()
             ui->result_show->setText(qtInfix);
         } else if (hasBalancedParenthesis(infix) == 1)
         {
-            if(qtInfix.right(1).at(0) == '(')
+            if(func_char_checker(qtInfix.right(1).at(0)))
             {
                 qtInfix += "(";
                 ui->result_show->setText(qtInfix);
@@ -336,4 +426,38 @@ bool MainWindow::brackets_char_checker(QChar x)
     else if(x == QChar('(')) flag = true;
     return flag;
 }
+
+bool MainWindow::func_char_checker(QChar x)
+{
+    bool flag = false;
+    if(x == QChar('+')) flag = true;
+    else if(x == QChar('-')) flag = true;
+    else if(x == QChar('*')) flag = true;
+    else if(x == QChar('/')) flag = true;
+    else if(x == QChar('^')) flag = true;
+    else if(x == QChar('(')) flag = true;
+    return flag;
+}
+
+
+void MainWindow::on_pushButton_percent_clicked()
+{
+    QString current_text = ui->result_show->text();
+    QString current_text_no_spaces = current_text.remove(" ");
+
+    static QRegularExpression regex("(-?\\d+(\\.\\d+)?)$");
+    QRegularExpressionMatch match = regex.match(current_text_no_spaces);
+    if (match.hasMatch())
+    {
+        QString lastNumString = match.captured(0);
+        double lastNum = lastNumString.toDouble();
+        lastNum *= 0.01;
+        QString newNumString = QString::number(lastNum);
+
+        current_text_no_spaces.replace(match.capturedStart(0), match.capturedLength(0), newNumString);
+        current_text = formatExpressionWithSpaces(current_text_no_spaces);
+        ui->result_show->setText(current_text);
+    }
+}
+
 

@@ -314,7 +314,8 @@ bool calculatePostfix(char *postfix, double *result, double x)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                pushCalcStack(&stack, cos(num));
+                double radians = num * M_PI / 180.0;
+                pushCalcStack(&stack, cos(radians));
             }
             else if (strcmp(token, "sqrt") == 0)
             {
@@ -332,14 +333,18 @@ bool calculatePostfix(char *postfix, double *result, double x)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                pushCalcStack(&stack, tan(num));
+                double radians = num * M_PI / 180.0;
+                pushCalcStack(&stack, tan(radians));
             }
             else if (strcmp(token, "asin") == 0)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
                 if (num >= -1 && num <= 1)
-                    pushCalcStack(&stack, asin(num));
+                {
+                    double radians = num * M_PI / 180.0;
+                    pushCalcStack(&stack, asin(radians));
+                }
                 else
                 {
                     flag = false;
@@ -351,7 +356,10 @@ bool calculatePostfix(char *postfix, double *result, double x)
                 // обработка функций
                 double num = popCalcStack(&stack);
                 if (num >= -1 && num <= 1)
-                    pushCalcStack(&stack, acos(num));
+                {
+                    double radians = num * M_PI / 180.0;
+                    pushCalcStack(&stack, acos(radians));
+                }
                 else
                 {
                     flag = false;
@@ -362,7 +370,8 @@ bool calculatePostfix(char *postfix, double *result, double x)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                pushCalcStack(&stack, atan(num));
+                double radians = num * M_PI / 180.0;
+                pushCalcStack(&stack, atan(radians));
             }
             else if (strcmp(token, "log") == 0)
             {
