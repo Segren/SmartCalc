@@ -35,6 +35,8 @@ private:
     QString formatNumberWithSpaces(const QString &number);
     bool brackets_char_checker(QChar x);
     bool func_char_checker(QChar x);
+    double xValue = 0.0;
+    bool isXInputActive = false;
 
 private slots:
     void digits_numbers();
@@ -44,5 +46,6 @@ private slots:
     void on_pushButton_equal_clicked();
     void on_pushButton_brackets_clicked();
     void on_pushButton_percent_clicked();
+    void on_pushButton_X_clicked();
 };
 #endif // MAINWINDOW_H

@@ -596,7 +596,7 @@ QPushButton:hover {
                                       stop:0 #dadbde, stop:1 #FF9739);
 }
 
-QPushButton:pressed {
+QPushButton:pressed, QPushButton:checked {
     /* Изменения при нажатии */
     background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
                                       stop:0 #FF7832, stop:1 #FF9739);
@@ -606,6 +606,9 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string>X</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="result_show_2">
@@ -619,18 +622,18 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Academy Engraved LET</family>
-      <pointsize>20</pointsize>
+      <family>Osaka</family>
+      <pointsize>15</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
 	qproperty-alignment: 'AlignVCenter | AlignRight';
-    color: white; /* Цвет текста */
+    color: black; /* Цвет текста */
     background-color: rgb(215, 215, 215); /* Фоновый цвет */
-	border-radius: 6px; 
-    font-size: 20pt; /* Размер шрифта */
-    padding: 8px; /* Внутренние отступы */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
     border: 1px solid #333; /* Граница вокруг QLabel */
 }
 </string>
