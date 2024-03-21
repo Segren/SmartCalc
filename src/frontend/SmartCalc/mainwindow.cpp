@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(this->width(), this->height());
 
 
+
     connect(ui->pushButton_00, SIGNAL(clicked()), this, SLOT(digits_numbers()));
     connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digits_numbers()));
     connect(ui->pushButton_1, SIGNAL(clicked()), this, SLOT(digits_numbers()));
@@ -53,6 +54,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_mod, SIGNAL(clicked()), this, SLOT(operations()));
 
     connect(ui->pushButton_X, &QPushButton::clicked, this, &MainWindow::on_pushButton_X_clicked);
+
+    connect(ui->pushButton_graph, SIGNAL(clicked()), this, SLOT(createGraph()));
+
 }
 
 
@@ -590,3 +594,44 @@ void MainWindow::on_pushButton_X_clicked()
     }
 }
 
+
+// void MainWindow::on_pushButton_graph_clicked()
+// {
+
+//     QRect MainWindowGeometry = this->geometry();
+//     int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
+//     int newY = MainWindowGeometry.y();
+//     graph.move(newX,newY);
+
+//     if(graph.isVisible())
+//     {
+//         graph.hide();
+//     } else
+//     {
+//         //emit signal(ui->result_show->text());
+//         graph.show();
+//     }
+
+// }
+
+void MainWindow::createGraph() {
+
+    QString infixValue = ui->result_show->text();
+    if(!graphWindow){
+        graphWindow = new Graph(infixValue,nullptr);
+        QRect MainWindowGeometry = this->geometry();
+        int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
+        int newY = MainWindowGeometry.y();
+        graphWindow->move(newX,newY);
+    } else {
+        graphWindow->updateData(infixValue);
+    }
+
+    if(graphWindow->isVisible())
+    {
+        graphWindow->hide();
+    } else
+    {
+        graphWindow->show();
+    }
+}

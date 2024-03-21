@@ -278,9 +278,10 @@ void addTokenToPostfixExpression(char *postfix, const char *token)
         printf("addTokenToPostfixExpression error: too long");
 }
 
-bool calculatePostfix(char *postfix, double *result, double x)
+bool calculatePostfix(char *originalPostfix, double *result, double x)
 {
     bool flag = true; // нет ошибки
+    char *postfix = strdup(originalPostfix);
     CalcStack stack;
     initCalcStack(&stack);
 
@@ -437,6 +438,7 @@ bool calculatePostfix(char *postfix, double *result, double x)
         *result = popCalcStack(&stack);
 
     clearCalcStack(&stack);
+    free(postfix);
     return flag;
 }
 

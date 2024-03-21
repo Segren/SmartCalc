@@ -39,55 +39,63 @@ namespace {
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
     "MainWindow",
-    "digits_numbers",
+    "signal",
     "",
+    "digits_numbers",
     "on_pushButton_dot_clicked",
     "operations",
     "on_pushButton_AC_clicked",
     "on_pushButton_equal_clicked",
     "on_pushButton_brackets_clicked",
     "on_pushButton_percent_clicked",
-    "on_pushButton_X_clicked"
+    "on_pushButton_X_clicked",
+    "createGraph"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[20];
+    uint offsetsAndSizes[24];
     char stringdata0[11];
-    char stringdata1[15];
+    char stringdata1[7];
     char stringdata2[1];
-    char stringdata3[26];
-    char stringdata4[11];
-    char stringdata5[25];
-    char stringdata6[28];
-    char stringdata7[31];
-    char stringdata8[30];
-    char stringdata9[24];
+    char stringdata3[15];
+    char stringdata4[26];
+    char stringdata5[11];
+    char stringdata6[25];
+    char stringdata7[28];
+    char stringdata8[31];
+    char stringdata9[30];
+    char stringdata10[24];
+    char stringdata11[12];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_stringdata_CLASSMainWindowENDCLASS = {
     {
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
-        QT_MOC_LITERAL(11, 14),  // "digits_numbers"
-        QT_MOC_LITERAL(26, 0),  // ""
-        QT_MOC_LITERAL(27, 25),  // "on_pushButton_dot_clicked"
-        QT_MOC_LITERAL(53, 10),  // "operations"
-        QT_MOC_LITERAL(64, 24),  // "on_pushButton_AC_clicked"
-        QT_MOC_LITERAL(89, 27),  // "on_pushButton_equal_clicked"
-        QT_MOC_LITERAL(117, 30),  // "on_pushButton_brackets_clicked"
-        QT_MOC_LITERAL(148, 29),  // "on_pushButton_percent_clicked"
-        QT_MOC_LITERAL(178, 23)   // "on_pushButton_X_clicked"
+        QT_MOC_LITERAL(11, 6),  // "signal"
+        QT_MOC_LITERAL(18, 0),  // ""
+        QT_MOC_LITERAL(19, 14),  // "digits_numbers"
+        QT_MOC_LITERAL(34, 25),  // "on_pushButton_dot_clicked"
+        QT_MOC_LITERAL(60, 10),  // "operations"
+        QT_MOC_LITERAL(71, 24),  // "on_pushButton_AC_clicked"
+        QT_MOC_LITERAL(96, 27),  // "on_pushButton_equal_clicked"
+        QT_MOC_LITERAL(124, 30),  // "on_pushButton_brackets_clicked"
+        QT_MOC_LITERAL(155, 29),  // "on_pushButton_percent_clicked"
+        QT_MOC_LITERAL(185, 23),  // "on_pushButton_X_clicked"
+        QT_MOC_LITERAL(209, 11)   // "createGraph"
     },
     "MainWindow",
-    "digits_numbers",
+    "signal",
     "",
+    "digits_numbers",
     "on_pushButton_dot_clicked",
     "operations",
     "on_pushButton_AC_clicked",
     "on_pushButton_equal_clicked",
     "on_pushButton_brackets_clicked",
     "on_pushButton_percent_clicked",
-    "on_pushButton_X_clicked"
+    "on_pushButton_X_clicked",
+    "createGraph"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -99,24 +107,32 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    1,   74,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   62,    2, 0x08,    1 /* Private */,
-       3,    0,   63,    2, 0x08,    2 /* Private */,
-       4,    0,   64,    2, 0x08,    3 /* Private */,
-       5,    0,   65,    2, 0x08,    4 /* Private */,
-       6,    0,   66,    2, 0x08,    5 /* Private */,
-       7,    0,   67,    2, 0x08,    6 /* Private */,
-       8,    0,   68,    2, 0x08,    7 /* Private */,
-       9,    0,   69,    2, 0x08,    8 /* Private */,
+       3,    0,   77,    2, 0x08,    3 /* Private */,
+       4,    0,   78,    2, 0x08,    4 /* Private */,
+       5,    0,   79,    2, 0x08,    5 /* Private */,
+       6,    0,   80,    2, 0x08,    6 /* Private */,
+       7,    0,   81,    2, 0x08,    7 /* Private */,
+       8,    0,   82,    2, 0x08,    8 /* Private */,
+       9,    0,   83,    2, 0x08,    9 /* Private */,
+      10,    0,   84,    2, 0x08,   10 /* Private */,
+      11,    0,   85,    2, 0x0a,   11 /* Public */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::QString,    2,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -138,6 +154,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
+        // method 'signal'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'digits_numbers'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_dot_clicked'
@@ -153,6 +172,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_pushButton_percent_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_X_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'createGraph'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -164,18 +185,28 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->digits_numbers(); break;
-        case 1: _t->on_pushButton_dot_clicked(); break;
-        case 2: _t->operations(); break;
-        case 3: _t->on_pushButton_AC_clicked(); break;
-        case 4: _t->on_pushButton_equal_clicked(); break;
-        case 5: _t->on_pushButton_brackets_clicked(); break;
-        case 6: _t->on_pushButton_percent_clicked(); break;
-        case 7: _t->on_pushButton_X_clicked(); break;
+        case 0: _t->signal((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 1: _t->digits_numbers(); break;
+        case 2: _t->on_pushButton_dot_clicked(); break;
+        case 3: _t->operations(); break;
+        case 4: _t->on_pushButton_AC_clicked(); break;
+        case 5: _t->on_pushButton_equal_clicked(); break;
+        case 6: _t->on_pushButton_brackets_clicked(); break;
+        case 7: _t->on_pushButton_percent_clicked(); break;
+        case 8: _t->on_pushButton_X_clicked(); break;
+        case 9: _t->createGraph(); break;
         default: ;
         }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (MainWindow::*)(QString );
+            if (_t _q_method = &MainWindow::signal; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 0;
+                return;
+            }
+        }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -197,14 +228,21 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 10;
     }
     return _id;
+}
+
+// SIGNAL 0
+void MainWindow::signal(QString _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

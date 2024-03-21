@@ -6,6 +6,11 @@
 #include <QString>
 #include <QMessageBox>
 #include <QFontDatabase>
+#include <graph.h>
+#include <QVector>
+#include <QTimer>
+
+#include "graph.h"
 
 extern "C"
 {
@@ -37,6 +42,11 @@ private:
     bool func_char_checker(QChar x);
     double xValue = 0.0;
     bool isXInputActive = false;
+    // Graph graph;
+    double xBegin, xEnd, step;
+    int dotNum;
+    QVector<double> x,y;
+    Graph *graphWindow = nullptr;
 
 private slots:
     void digits_numbers();
@@ -47,5 +57,12 @@ private slots:
     void on_pushButton_brackets_clicked();
     void on_pushButton_percent_clicked();
     void on_pushButton_X_clicked();
+
+
+signals:
+    void signal(QString);
+
+public slots:   //FIXME
+    void createGraph();
 };
 #endif // MAINWINDOW_H
