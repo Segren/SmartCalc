@@ -11,7 +11,6 @@ Graph::Graph(const QString &value, QWidget *parent)
     ui->widget->yAxis->setRange(-20,20);
 
     QString qtInfix = value;
-    qtInfix.remove(' ');
     QByteArray byteArray = qtInfix.toUtf8();
     char* infix = byteArray.data();
     char *postfix = tokenize(infix);
@@ -42,7 +41,10 @@ Graph::Graph(const QString &value, QWidget *parent)
             resultString.remove(regexDot);
 
             double aValue = resultString.toDouble();
+            qDebug() << "X:" << aValue << "Cos(X):" << qCos(X);
             y.push_back(aValue);
+        } else {
+            y.push_back(std::nan(""));
         }
     }
     free(postfix);

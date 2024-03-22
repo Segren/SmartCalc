@@ -308,15 +308,16 @@ bool calculatePostfix(char *originalPostfix, double *result, double x)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                double radians = num * M_PI / 180.0;
-                pushCalcStack(&stack, sin(radians));
+                // double radians = num * M_PI / 180.0;
+                pushCalcStack(&stack, sin(num));
             }
             else if (strcmp(token, "cos") == 0)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                double radians = num * M_PI / 180.0;
-                pushCalcStack(&stack, cos(radians));
+                // double radians = num * M_PI / 180.0;
+                // pushCalcStack(&stack, cos(radians));
+                pushCalcStack(&stack, cos(num));
             }
             else if (strcmp(token, "sqrt") == 0)
             {
@@ -334,8 +335,8 @@ bool calculatePostfix(char *originalPostfix, double *result, double x)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                double radians = num * M_PI / 180.0;
-                pushCalcStack(&stack, tan(radians));
+                // double radians = num * M_PI / 180.0;
+                pushCalcStack(&stack, tan(num));
             }
             else if (strcmp(token, "asin") == 0)
             {
@@ -343,8 +344,8 @@ bool calculatePostfix(char *originalPostfix, double *result, double x)
                 double num = popCalcStack(&stack);
                 if (num >= -1 && num <= 1)
                 {
-                    double radians = num * M_PI / 180.0;
-                    pushCalcStack(&stack, asin(radians));
+                    // double radians = num * M_PI / 180.0;
+                    pushCalcStack(&stack, asin(num));
                 }
                 else
                 {
@@ -358,8 +359,8 @@ bool calculatePostfix(char *originalPostfix, double *result, double x)
                 double num = popCalcStack(&stack);
                 if (num >= -1 && num <= 1)
                 {
-                    double radians = num * M_PI / 180.0;
-                    pushCalcStack(&stack, acos(radians));
+                    // double radians = num * M_PI / 180.0;
+                    pushCalcStack(&stack, acos(num));
                 }
                 else
                 {
@@ -371,8 +372,8 @@ bool calculatePostfix(char *originalPostfix, double *result, double x)
             {
                 // обработка функций
                 double num = popCalcStack(&stack);
-                double radians = num * M_PI / 180.0;
-                pushCalcStack(&stack, atan(radians));
+                // double radians = num * M_PI / 180.0;
+                pushCalcStack(&stack, atan(num));
             }
             else if (strcmp(token, "log") == 0)
             {
@@ -444,7 +445,7 @@ bool calculatePostfix(char *originalPostfix, double *result, double x)
 
 // int main(void)
 // {
-//     char *input = "sin(1)";
+//     char *input = "asin(0.5)";
 //     if (hasBalancedParenthesis(input) == 0)
 //     {
 //         char *postfix = tokenize(input);
@@ -452,10 +453,11 @@ bool calculatePostfix(char *originalPostfix, double *result, double x)
 //         double x = 0;
 //         if (calculatePostfix(postfix, &result, x))
 //         {
-//             printf("%lf", result);
+//             printf("%lf\n", result);
 //         }
 //         else
-//             printf("error\n");
+//             printf("nan\n");
+//         printf("%lf\n", asin(0.5));
 //         free(postfix);
 //     }
 //     return 0;

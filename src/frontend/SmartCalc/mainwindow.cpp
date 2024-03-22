@@ -617,21 +617,28 @@ void MainWindow::on_pushButton_X_clicked()
 void MainWindow::createGraph() {
 
     QString infixValue = ui->result_show->text();
-    if(!graphWindow){
-        graphWindow = new Graph(infixValue,nullptr);
-        QRect MainWindowGeometry = this->geometry();
-        int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
-        int newY = MainWindowGeometry.y();
-        graphWindow->move(newX,newY);
-    } else {
-        graphWindow->updateData(infixValue);
-    }
+    QByteArray byteArray = infixValue.toUtf8();
+    char* infix = byteArray.data();
 
-    if(graphWindow->isVisible())
+    infixValue.remove(' ');
+    if((hasBalancedParenthesis(infix) == 0) && !isXInputActive && !infixValue.isEmpty() && (infixValue.right(1).at(0) == QChar(')') || infixValue.right(1).at(0).isDigit() || infixValue.right(1).at(0) == QChar('X')))
     {
-        graphWindow->hide();
-    } else
-    {
-        graphWindow->show();
+        if(!graphWindow){
+            graphWindow = new Graph(infixValue,nullptr);
+            QRect MainWindowGeometry = this->geometry();
+            int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
+            int newY = MainWindowGeometry.y();
+            graphWindow->move(newX,newY);
+        } else {
+            graphWindow->updateData(infixValue);
+        }
+
+        if(graphWindow->isVisible())
+        {
+            graphWindow->hide();
+        } else
+        {
+            graphWindow->show();
+        }
     }
 }
