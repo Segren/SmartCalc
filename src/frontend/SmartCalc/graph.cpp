@@ -25,7 +25,7 @@ Graph::Graph(const QString &value, QWidget *parent)
 
     for(X=xBegin;X<xEnd;X+=step){
         x.push_back(X);
-        bool noDivByZero = calculatePostfix(postfix, &result, X);
+        bool noDivByZero = calculatePostfixForGraph(postfix, &result, X);
         if(noDivByZero)
         {
             if (std::abs(result - qRound(result)) < 0.0000000001) {
@@ -82,7 +82,7 @@ void Graph::updateData(const QString &newValue) {
 
     for(X=xBegin;X<xEnd;X+=step){
         x.push_back(X);
-        bool noDivByZero = calculatePostfix(postfix, &result, X);
+        bool noDivByZero = calculatePostfixForGraph(postfix, &result, X);
         if(noDivByZero)
         {
             if (std::abs(result - qRound(result)) < 0.0000000001) {

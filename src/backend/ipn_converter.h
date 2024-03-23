@@ -38,6 +38,7 @@ char *tokenize(char *expression);
 OperationType inputSort(char *input);
 void addTokenToPostfixExpression(char *postfix, const char *token);
 bool calculatePostfix(char *postfix, double *result, double x);
+bool calculatePostfixForGraph(char *originalPostfix, double *result, double x);
 int hasBalancedParenthesis(char *str);
 
 #endif // IPN_CONVERTER_H
