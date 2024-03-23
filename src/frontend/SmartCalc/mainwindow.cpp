@@ -595,25 +595,6 @@ void MainWindow::on_pushButton_X_clicked()
 }
 
 
-// void MainWindow::on_pushButton_graph_clicked()
-// {
-
-//     QRect MainWindowGeometry = this->geometry();
-//     int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
-//     int newY = MainWindowGeometry.y();
-//     graph.move(newX,newY);
-
-//     if(graph.isVisible())
-//     {
-//         graph.hide();
-//     } else
-//     {
-//         //emit signal(ui->result_show->text());
-//         graph.show();
-//     }
-
-// }
-
 void MainWindow::createGraph() {
 
     QString infixValue = ui->result_show->text();

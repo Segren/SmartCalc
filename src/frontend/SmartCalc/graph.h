@@ -21,9 +21,6 @@ private:
     double xBegin, xEnd, step, X;
     int dotNum;
     QVector<double> x,y;
-
-// public slots:
-//     explicit Graph(const QString &value, QWidget *parent = nullptr);
 };
 
 #endif // GRAPH_H

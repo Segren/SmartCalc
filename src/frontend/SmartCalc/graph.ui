@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>408</height>
+    <width>420</width>
+    <height>250</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,13 +16,53 @@
   <widget class="QCustomPlot" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>9</y>
+     <x>20</x>
+     <y>20</y>
      <width>381</width>
      <height>211</height>
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="background_grey">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>401</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Digital-7</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: white; /* Цвет текста */
+    background-color: rgb(215, 215, 215); /* Фоновый цвет */
+    font-family: 'Digital-7', Monospace; /* Шрифты */
+    font-size: 30pt; /* Размер шрифта */
+    padding: 8px; /* Внутренние отступы */
+    border: 3px solid #333; /* Граница вокруг QLabel */
+	border-radius: 6px; /* Скругление углов */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>background_grey</zorder>
+  <zorder>widget</zorder>
  </widget>
  <customwidgets>
   <customwidget>

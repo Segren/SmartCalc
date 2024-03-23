@@ -836,7 +836,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Smart_Calc", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         result_show->setText(QString());
         background_grey->setText(QString());
         pushButton_tan->setText(QCoreApplication::translate("MainWindow", "tan", nullptr));
@@ -852,7 +852,7 @@ public:
         pushButton_sin->setText(QCoreApplication::translate("MainWindow", "sin", nullptr));
         pushButton_expo->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
         pushButton_X->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
-        result_show_2->setText(QString());
+        result_show_2->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         pushButton_back->setText(QCoreApplication::translate("MainWindow", "<<", nullptr));
         label_equal->setText(QCoreApplication::translate("MainWindow", "=", nullptr));
         pushButton_signChange->setText(QCoreApplication::translate("MainWindow", "+/-", nullptr));

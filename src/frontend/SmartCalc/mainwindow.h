@@ -62,7 +62,7 @@ private slots:
 signals:
     void signal(QString);
 
-public slots:   //FIXME
+public slots:
     void createGraph();
 };
 #endif // MAINWINDOW_H

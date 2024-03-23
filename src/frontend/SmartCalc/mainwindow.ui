@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Smart_Calc</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="result_show">
@@ -639,7 +639,7 @@ QPushButton:pressed, QPushButton:checked {
 </string>
     </property>
     <property name="text">
-     <string/>
+     <string>0</string>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
