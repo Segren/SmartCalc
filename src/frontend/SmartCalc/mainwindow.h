@@ -42,11 +42,13 @@ private:
     bool func_char_checker(QChar x);
     double xValue = 0.0;
     bool isXInputActive = false;
-    // Graph graph;
     double xBegin, xEnd, step;
     int dotNum;
     QVector<double> x,y;
     Graph *graphWindow = nullptr;
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 
 private slots:
     void digits_numbers();

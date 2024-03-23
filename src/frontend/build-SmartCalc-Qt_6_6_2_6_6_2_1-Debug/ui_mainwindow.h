@@ -836,7 +836,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Smart Calc", nullptr));
         result_show->setText(QString());
         background_grey->setText(QString());
         pushButton_tan->setText(QCoreApplication::translate("MainWindow", "tan", nullptr));

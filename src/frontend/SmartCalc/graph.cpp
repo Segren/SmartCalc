@@ -7,6 +7,7 @@ Graph::Graph(const QString &value, QWidget *parent)
     , ui(new Ui::Graph)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::FramelessWindowHint);
     ui->widget->xAxis->setRange(-20,20);
     ui->widget->yAxis->setRange(-20,20);
     this->setFixedSize(this->width(), this->height());

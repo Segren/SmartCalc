@@ -57,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->pushButton_graph, SIGNAL(clicked()), this, SLOT(createGraph()));
 
+
 }
 
 
@@ -622,4 +623,11 @@ void MainWindow::createGraph() {
             graphWindow->show();
         }
     }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+    if (graphWindow) {
+        graphWindow->close();
+    }
+    QMainWindow::closeEvent(event);
 }
