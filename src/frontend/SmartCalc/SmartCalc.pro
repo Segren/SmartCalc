@@ -3,6 +3,8 @@ QT += core gui widgets printsupport
 CONFIG += c++17
 
 SOURCES += \
+    credit.cpp \
+    deposit.cpp \
     graph.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -12,6 +14,8 @@ SOURCES += \
     qcustomplot.cpp
 
 HEADERS += \
+    credit.h \
+    deposit.h \
     graph.h \
     mainwindow.h \
     ../../backend/ipn_converter.h \
@@ -20,6 +24,8 @@ HEADERS += \
     qcustomplot.h
 
 FORMS += mainwindow.ui \
+    credit.ui \
+    deposit.ui \
     graph.ui
 
 DISTFILES += \

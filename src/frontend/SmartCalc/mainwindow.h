@@ -9,6 +9,8 @@
 #include <graph.h>
 #include <QVector>
 #include <QTimer>
+#include <credit.h>
+#include <deposit.h>
 
 #include "graph.h"
 
@@ -46,6 +48,8 @@ private:
     int dotNum;
     QVector<double> x,y;
     Graph *graphWindow = nullptr;
+    Credit creditWindow;
+    Deposit depositWindow;
 
 protected:
     void closeEvent(QCloseEvent *event) override;
@@ -60,11 +64,12 @@ private slots:
     void on_pushButton_percent_clicked();
     void on_pushButton_X_clicked();
 
-
 signals:
     void signal(QString);
 
 public slots:
     void createGraph();
+    void createCredit();
+    void createDeposit();
 };
 #endif // MAINWINDOW_H

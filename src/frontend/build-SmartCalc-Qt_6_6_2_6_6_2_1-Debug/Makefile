@@ -52,22 +52,30 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../SmartCalc/graph.cpp \
+SOURCES       = ../SmartCalc/credit.cpp \
+		../SmartCalc/deposit.cpp \
+		../SmartCalc/graph.cpp \
 		../SmartCalc/main.cpp \
 		../SmartCalc/mainwindow.cpp \
 		../../backend/ipn_converter.c \
 		../../backend/s21_smart_calc.c \
 		../../backend/stack.c \
-		../SmartCalc/qcustomplot.cpp moc_graph.cpp \
+		../SmartCalc/qcustomplot.cpp moc_credit.cpp \
+		moc_deposit.cpp \
+		moc_graph.cpp \
 		moc_mainwindow.cpp \
 		moc_qcustomplot.cpp
-OBJECTS       = graph.o \
+OBJECTS       = credit.o \
+		deposit.o \
+		graph.o \
 		main.o \
 		mainwindow.o \
 		ipn_converter.o \
 		s21_smart_calc.o \
 		stack.o \
 		qcustomplot.o \
+		moc_credit.o \
+		moc_deposit.o \
 		moc_graph.o \
 		moc_mainwindow.o \
 		moc_qcustomplot.o
@@ -388,12 +396,16 @@ DIST          = ../fonts/digital-7 \
 		/opt/homebrew/share/qt/mkspecs/features/exceptions.prf \
 		/opt/homebrew/share/qt/mkspecs/features/yacc.prf \
 		/opt/homebrew/share/qt/mkspecs/features/lex.prf \
-		../SmartCalc/SmartCalc.pro ../SmartCalc/graph.h \
+		../SmartCalc/SmartCalc.pro ../SmartCalc/credit.h \
+		../SmartCalc/deposit.h \
+		../SmartCalc/graph.h \
 		../SmartCalc/mainwindow.h \
 		../../backend/ipn_converter.h \
 		../../backend/s21_smart_calc.h \
 		../../backend/stack.h \
-		../SmartCalc/qcustomplot.h ../SmartCalc/graph.cpp \
+		../SmartCalc/qcustomplot.h ../SmartCalc/credit.cpp \
+		../SmartCalc/deposit.cpp \
+		../SmartCalc/graph.cpp \
 		../SmartCalc/main.cpp \
 		../SmartCalc/mainwindow.cpp \
 		../../backend/ipn_converter.c \
@@ -420,7 +432,7 @@ include /opt/homebrew/Cellar/qt/6.6.2_1/share/qt/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-SmartCalc.app/Contents/MacOS/SmartCalc: ui_mainwindow.h ui_graph.h $(OBJECTS)  
+SmartCalc.app/Contents/MacOS/SmartCalc: ui_mainwindow.h ui_credit.h ui_deposit.h ui_graph.h $(OBJECTS)  
 	@test -d SmartCalc.app/Contents/MacOS/ || mkdir -p SmartCalc.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -1086,9 +1098,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../SmartCalc/graph.h ../SmartCalc/mainwindow.h ../../backend/ipn_converter.h ../../backend/s21_smart_calc.h ../../backend/stack.h ../SmartCalc/qcustomplot.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../SmartCalc/graph.cpp ../SmartCalc/main.cpp ../SmartCalc/mainwindow.cpp ../../backend/ipn_converter.c ../../backend/s21_smart_calc.c ../../backend/stack.c ../SmartCalc/qcustomplot.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../SmartCalc/mainwindow.ui ../SmartCalc/graph.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../SmartCalc/credit.h ../SmartCalc/deposit.h ../SmartCalc/graph.h ../SmartCalc/mainwindow.h ../../backend/ipn_converter.h ../../backend/s21_smart_calc.h ../../backend/stack.h ../SmartCalc/qcustomplot.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../SmartCalc/credit.cpp ../SmartCalc/deposit.cpp ../SmartCalc/graph.cpp ../SmartCalc/main.cpp ../SmartCalc/mainwindow.cpp ../../backend/ipn_converter.c ../../backend/s21_smart_calc.c ../../backend/stack.c ../SmartCalc/qcustomplot.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../SmartCalc/mainwindow.ui ../SmartCalc/credit.ui ../SmartCalc/deposit.ui ../SmartCalc/graph.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1123,9 +1135,23 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0 -Wall -Wextra -dM -E -o moc_predefs.h /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_graph.cpp moc_mainwindow.cpp moc_qcustomplot.cpp
+compiler_moc_header_make_all: moc_credit.cpp moc_deposit.cpp moc_graph.cpp moc_mainwindow.cpp moc_qcustomplot.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_graph.cpp moc_mainwindow.cpp moc_qcustomplot.cpp
+	-$(DEL_FILE) moc_credit.cpp moc_deposit.cpp moc_graph.cpp moc_mainwindow.cpp moc_qcustomplot.cpp
+moc_credit.cpp: ../SmartCalc/credit.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
+		moc_predefs.h \
+		/opt/homebrew/share/qt/libexec/moc
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-SmartCalc-Qt_6_6_2_6_6_2_1-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/SmartCalc -I/opt/homebrew/lib/QtPrintSupport.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../SmartCalc/credit.h -o moc_credit.cpp
+
+moc_deposit.cpp: ../SmartCalc/deposit.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
+		moc_predefs.h \
+		/opt/homebrew/share/qt/libexec/moc
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/build-SmartCalc-Qt_6_6_2_6_6_2_1-Debug/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/dgon/Desktop/project/C7_SmartCalc_v1.0-1/src/frontend/SmartCalc -I/opt/homebrew/lib/QtPrintSupport.framework/Headers -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/opt/homebrew/lib ../SmartCalc/deposit.h -o moc_deposit.cpp
+
 moc_graph.cpp: ../SmartCalc/graph.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -1147,6 +1173,12 @@ moc_mainwindow.cpp: ../SmartCalc/mainwindow.h \
 		../SmartCalc/graph.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVector \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvector.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QTimer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
+		../SmartCalc/credit.h \
+		../SmartCalc/deposit.h \
 		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
@@ -1166,15 +1198,27 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_graph.h
+compiler_uic_make_all: ui_mainwindow.h ui_credit.h ui_deposit.h ui_graph.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_graph.h
+	-$(DEL_FILE) ui_mainwindow.h ui_credit.h ui_deposit.h ui_graph.h
 ui_mainwindow.h: ../SmartCalc/mainwindow.ui \
 		/opt/homebrew/share/qt/libexec/uic
 	/opt/homebrew/share/qt/libexec/uic ../SmartCalc/mainwindow.ui -o ui_mainwindow.h
 
-ui_graph.h: ../SmartCalc/graph.ui \
+ui_credit.h: ../SmartCalc/credit.ui \
 		/opt/homebrew/share/qt/libexec/uic
+	/opt/homebrew/share/qt/libexec/uic ../SmartCalc/credit.ui -o ui_credit.h
+
+ui_deposit.h: ../SmartCalc/deposit.ui \
+		/opt/homebrew/share/qt/libexec/uic
+	/opt/homebrew/share/qt/libexec/uic ../SmartCalc/deposit.ui -o ui_deposit.h
+
+ui_graph.h: ../SmartCalc/graph.ui \
+		/opt/homebrew/share/qt/libexec/uic \
+		../SmartCalc/qcustomplot.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/qmath.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/qnumeric.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QtNumeric
 	/opt/homebrew/share/qt/libexec/uic ../SmartCalc/graph.ui -o ui_graph.h
 
 compiler_rez_source_make_all:
@@ -1189,10 +1233,46 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+credit.o: ../SmartCalc/credit.cpp ../SmartCalc/credit.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_credit.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o credit.o ../SmartCalc/credit.cpp
+
+deposit.o: ../SmartCalc/deposit.cpp ../SmartCalc/deposit.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_deposit.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o deposit.o ../SmartCalc/deposit.cpp
+
 graph.o: ../SmartCalc/graph.cpp ../SmartCalc/graph.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
-		ui_graph.h
+		ui_graph.h \
+		../SmartCalc/qcustomplot.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/qmath.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/qnumeric.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QtNumeric \
+		../SmartCalc/mainwindow.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QRegularExpression \
+		/opt/homebrew/lib/QtCore.framework/Headers/qregularexpression.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QString \
+		/opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		/opt/homebrew/lib/QtGui.framework/Headers/QFontDatabase \
+		/opt/homebrew/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVector \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvector.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QTimer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
+		../SmartCalc/credit.h \
+		../SmartCalc/deposit.h \
+		../../backend/s21_smart_calc.h \
+		../../backend/ipn_converter.h \
+		../../backend/stack.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o graph.o ../SmartCalc/graph.cpp
 
 main.o: ../SmartCalc/main.cpp ../SmartCalc/mainwindow.h \
@@ -1209,6 +1289,12 @@ main.o: ../SmartCalc/main.cpp ../SmartCalc/mainwindow.h \
 		../SmartCalc/graph.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVector \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvector.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QTimer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
+		../SmartCalc/credit.h \
+		../SmartCalc/deposit.h \
 		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
@@ -1230,6 +1316,12 @@ mainwindow.o: ../SmartCalc/mainwindow.cpp ../SmartCalc/mainwindow.h \
 		../SmartCalc/graph.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QVector \
+		/opt/homebrew/lib/QtCore.framework/Headers/qvector.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QTimer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
+		../SmartCalc/credit.h \
+		../SmartCalc/deposit.h \
 		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
@@ -1253,6 +1345,12 @@ qcustomplot.o: ../SmartCalc/qcustomplot.cpp ../SmartCalc/qcustomplot.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qnumeric.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QtNumeric
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qcustomplot.o ../SmartCalc/qcustomplot.cpp
+
+moc_credit.o: moc_credit.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_credit.o moc_credit.cpp
+
+moc_deposit.o: moc_deposit.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_deposit.o moc_deposit.cpp
 
 moc_graph.o: moc_graph.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_graph.o moc_graph.cpp

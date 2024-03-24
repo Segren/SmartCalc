@@ -56,6 +56,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_X, &QPushButton::clicked, this, &MainWindow::on_pushButton_X_clicked);
 
     connect(ui->pushButton_graph, SIGNAL(clicked()), this, SLOT(createGraph()));
+    connect(ui->pushButton_credit, SIGNAL(clicked()), this, SLOT(createCredit()));
+    connect(ui->pushButton_deposit, SIGNAL(clicked()), this, SLOT(createDeposit()));
 
 
 }
@@ -602,17 +604,30 @@ void MainWindow::createGraph() {
     QByteArray byteArray = infixValue.toUtf8();
     char* infix = byteArray.data();
 
+    QRect MainWindowGeometry = this->geometry();
+    int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
+    int newY;
+
     infixValue.remove(' ');
     if((hasBalancedParenthesis(infix) == 0) && !isXInputActive && !infixValue.isEmpty() && (infixValue.right(1).at(0) == QChar(')') || infixValue.right(1).at(0).isDigit() || infixValue.right(1).at(0) == QChar('X')))
     {
         if(!graphWindow){
             graphWindow = new Graph(infixValue,nullptr);
-            QRect MainWindowGeometry = this->geometry();
-            int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
-            int newY = MainWindowGeometry.y();
+            if(!creditWindow.isVisible()){
+                newY = MainWindowGeometry.y();
+            } else {
+                newY = MainWindowGeometry.y() + creditWindow.height();
+            }
             graphWindow->move(newX,newY);
         } else {
             graphWindow->updateData(infixValue);
+
+            if(!creditWindow.isVisible()){
+                newY = MainWindowGeometry.y();
+            } else {
+                newY = MainWindowGeometry.y() + creditWindow.height();
+            }
+            graphWindow->move(newX,newY);
         }
 
         if(graphWindow->isVisible())
@@ -629,5 +644,52 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     if (graphWindow) {
         graphWindow->close();
     }
+    if(creditWindow.isVisible()){
+        creditWindow.close();
+    }
+    if(depositWindow.isVisible()){
+        depositWindow.close();
+    }
     QMainWindow::closeEvent(event);
+}
+
+void MainWindow::createCredit() {
+    QString infixValue = ui->result_show->text();
+    if(!graphWindow){
+        graphWindow = new Graph(infixValue,nullptr);
+    }
+    QRect MainWindowGeometry = this->geometry();
+    int newX = MainWindowGeometry.x() + MainWindowGeometry.width();
+    int newY;
+    if(graphWindow->isHidden()){
+        newY = MainWindowGeometry.y();
+    } else {
+        newY = MainWindowGeometry.y() + graphWindow->height();
+    }
+
+    creditWindow.move(newX, newY);
+
+    if(creditWindow.isVisible())
+    {
+        creditWindow.hide();
+    } else
+    {
+        creditWindow.show();
+    }
+}
+
+void MainWindow::createDeposit() {
+    QRect MainWindowGeometry = this->geometry();
+    int newX = MainWindowGeometry.x() - depositWindow.width();
+    int newY = MainWindowGeometry.y();
+
+    depositWindow.move(newX, newY);
+
+    if(depositWindow.isVisible())
+    {
+        depositWindow.hide();
+    } else
+    {
+        depositWindow.show();
+    }
 }
