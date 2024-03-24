@@ -8,9 +8,18 @@ Credit::Credit(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(Qt::FramelessWindowHint);
     this->setFixedSize(this->width(), this->height());
+
+    ui->paymentType->addItem("Annuity");
+    ui->paymentType->addItem("Differential");
 }
 
 Credit::~Credit()
 {
     delete ui;
 }
+
+// void Credit::on_lineEdit_textChanged(const QString &arg1)
+// {
+
+// }
+

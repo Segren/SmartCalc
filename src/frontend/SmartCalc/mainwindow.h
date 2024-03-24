@@ -11,6 +11,8 @@
 #include <QTimer>
 #include <credit.h>
 #include <deposit.h>
+#include <QLineEdit>
+#include <QComboBox>
 
 #include "graph.h"
 

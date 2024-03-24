@@ -15,6 +15,9 @@ public:
     explicit Credit(QWidget *parent = nullptr);
     ~Credit();
 
+private slots:
+    // void on_lineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::Credit *ui;
 };

@@ -685,6 +685,10 @@ void MainWindow::createDeposit() {
 
     depositWindow.move(newX, newY);
 
+    //QLineEdit *lineEdit = new QLineEdit(this);
+
+
+
     if(depositWindow.isVisible())
     {
         depositWindow.hide();

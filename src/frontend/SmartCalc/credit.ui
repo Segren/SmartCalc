@@ -7,12 +7,526 @@
     <x>0</x>
     <y>0</y>
     <width>420</width>
-    <height>300</height>
+    <height>327</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Credit Calc</string>
   </property>
+  <widget class="QLineEdit" name="creditAmount">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>14</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="creditAmountText">
+   <property name="geometry">
+    <rect>
+     <x>57</x>
+     <y>21</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Credit amount:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="creditTermText">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>65</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Credit term (month):</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="interestRateText">
+   <property name="geometry">
+    <rect>
+     <x>22</x>
+     <y>105</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Yearly interest rate:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="paymentTypeText">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>146</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Type of payments</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="creditTerm">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>57</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; </string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="interestRate">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>100</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="percentText">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>100</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="paymentType">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>142</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 15pt; /* Размер шрифта */
+    padding: 4px; /* Внутренние отступы */
+    border: 1px solid #333; </string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>401</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="monthlyPaymentsText">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>215</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Monthly payments:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="overpayText">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>249</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Overpay:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="totalPaymentText">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>284</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Total payment:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_clear">
+   <property name="geometry">
+    <rect>
+     <x>323</x>
+     <y>214</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    /* Основные настройки */
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #f6f7fa, stop:1 #dadbde);
+    min-width: 20px;
+    min-height: 10px;
+
+    /* Текст и шрифт */
+    color: #333;
+    font: bold 14px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    /* Изменения при наведении курсора */
+    border: 2px solid #FF7832;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #dadbde, stop:1 #FF9739);
+}
+
+QPushButton:pressed, QPushButton:checked {
+    /* Изменения при нажатии */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #FF7832, stop:1 #FF9739);
+    color: white;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_clear_2">
+   <property name="geometry">
+    <rect>
+     <x>323</x>
+     <y>271</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Calculate</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="background_grey">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>204</y>
+     <width>312</width>
+     <height>119</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Digital-7</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: white; /* Цвет текста */
+    background-color: rgb(215, 215, 215); /* Фоновый цвет */
+    font-family: 'Digital-7', Monospace; /* Шрифты */
+    font-size: 30pt; /* Размер шрифта */
+    padding: 8px; /* Внутренние отступы */
+    border: 3px solid #333; /* Граница вокруг QLabel */
+	border-radius: 6px; /* Скругление углов */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="monthlyPayments_show">
+   <property name="geometry">
+    <rect>
+     <x>173</x>
+     <y>214</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: white; /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="overpay_show">
+   <property name="geometry">
+    <rect>
+     <x>172</x>
+     <y>248</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: white; /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="totalPayment_show">
+   <property name="geometry">
+    <rect>
+     <x>172</x>
+     <y>283</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: white; /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>162</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_3">
+   <property name="geometry">
+    <rect>
+     <x>22</x>
+     <y>120</y>
+     <width>158</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>77</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_5">
+   <property name="geometry">
+    <rect>
+     <x>58</x>
+     <y>32</y>
+     <width>124</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <zorder>background_grey</zorder>
+  <zorder>creditAmount</zorder>
+  <zorder>creditAmountText</zorder>
+  <zorder>creditTermText</zorder>
+  <zorder>interestRateText</zorder>
+  <zorder>paymentTypeText</zorder>
+  <zorder>creditTerm</zorder>
+  <zorder>interestRate</zorder>
+  <zorder>percentText</zorder>
+  <zorder>paymentType</zorder>
+  <zorder>line</zorder>
+  <zorder>monthlyPaymentsText</zorder>
+  <zorder>overpayText</zorder>
+  <zorder>totalPaymentText</zorder>
+  <zorder>pushButton_clear</zorder>
+  <zorder>pushButton_clear_2</zorder>
+  <zorder>monthlyPayments_show</zorder>
+  <zorder>overpay_show</zorder>
+  <zorder>totalPayment_show</zorder>
+  <zorder>line_2</zorder>
+  <zorder>line_3</zorder>
+  <zorder>line_4</zorder>
+  <zorder>line_5</zorder>
  </widget>
  <resources/>
  <connections/>
