@@ -18,6 +18,8 @@ public:
 private slots:
     // void on_lineEdit_textChanged(const QString &arg1);
 
+    void on_pushButton_clear_clicked();
+
 private:
     Ui::Credit *ui;
 };

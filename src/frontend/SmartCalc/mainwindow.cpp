@@ -654,7 +654,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 }
 
 void MainWindow::createCredit() {
-    QString infixValue = ui->result_show->text();
+    QString infixValue = "1";
     if(!graphWindow){
         graphWindow = new Graph(infixValue,nullptr);
     }
@@ -684,8 +684,6 @@ void MainWindow::createDeposit() {
     int newY = MainWindowGeometry.y();
 
     depositWindow.move(newX, newY);
-
-    //QLineEdit *lineEdit = new QLineEdit(this);
 
 
 
