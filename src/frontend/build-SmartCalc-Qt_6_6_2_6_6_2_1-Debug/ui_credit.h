@@ -37,7 +37,7 @@ public:
     QLabel *overpayText;
     QLabel *totalPaymentText;
     QPushButton *pushButton_clear;
-    QPushButton *pushButton_clear_2;
+    QPushButton *pushButton_calculate;
     QLabel *background_grey;
     QLabel *monthlyPayments_show;
     QLabel *overpay_show;
@@ -46,12 +46,15 @@ public:
     QFrame *line_3;
     QFrame *line_4;
     QFrame *line_5;
+    QLabel *monthlyPayment1;
+    QLabel *monthlyPayment2;
+    QLabel *label;
 
     void setupUi(QWidget *Credit)
     {
         if (Credit->objectName().isEmpty())
             Credit->setObjectName("Credit");
-        Credit->resize(420, 327);
+        Credit->resize(420, 364);
         creditAmount = new QLineEdit(Credit);
         creditAmount->setObjectName("creditAmount");
         creditAmount->setGeometry(QRect(200, 14, 211, 31));
@@ -114,15 +117,15 @@ public:
         monthlyPaymentsText->setStyleSheet(QString::fromUtf8("font-size: 20px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */"));
         overpayText = new QLabel(Credit);
         overpayText->setObjectName("overpayText");
-        overpayText->setGeometry(QRect(50, 249, 121, 31));
+        overpayText->setGeometry(QRect(50, 282, 121, 31));
         overpayText->setStyleSheet(QString::fromUtf8("font-size: 20px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */"));
         totalPaymentText = new QLabel(Credit);
         totalPaymentText->setObjectName("totalPaymentText");
-        totalPaymentText->setGeometry(QRect(30, 284, 141, 31));
+        totalPaymentText->setGeometry(QRect(30, 317, 141, 31));
         totalPaymentText->setStyleSheet(QString::fromUtf8("font-size: 20px; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */"));
         pushButton_clear = new QPushButton(Credit);
         pushButton_clear->setObjectName("pushButton_clear");
-        pushButton_clear->setGeometry(QRect(323, 214, 91, 41));
+        pushButton_clear->setGeometry(QRect(323, 214, 91, 61));
         QFont font;
         font.setFamilies({QString::fromUtf8("Osaka")});
         font.setBold(true);
@@ -159,14 +162,14 @@ public:
 "}\n"
 "\n"
 ""));
-        pushButton_clear_2 = new QPushButton(Credit);
-        pushButton_clear_2->setObjectName("pushButton_clear_2");
-        pushButton_clear_2->setGeometry(QRect(323, 271, 91, 41));
+        pushButton_calculate = new QPushButton(Credit);
+        pushButton_calculate->setObjectName("pushButton_calculate");
+        pushButton_calculate->setGeometry(QRect(323, 288, 91, 61));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Osaka")});
         font1.setItalic(false);
-        pushButton_clear_2->setFont(font1);
-        pushButton_clear_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        pushButton_calculate->setFont(font1);
+        pushButton_calculate->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #406592; \n"
 "    color: white; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "    border-radius: 6px; /* \320\241\320\273\320\265\320\263\320\272\320\260 \321\201\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
@@ -187,7 +190,7 @@ public:
 ""));
         background_grey = new QLabel(Credit);
         background_grey->setObjectName("background_grey");
-        background_grey->setGeometry(QRect(5, 204, 312, 119));
+        background_grey->setGeometry(QRect(5, 204, 312, 155));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Digital-7")});
         font2.setPointSize(30);
@@ -225,7 +228,7 @@ public:
         monthlyPayments_show->setWordWrap(true);
         overpay_show = new QLabel(Credit);
         overpay_show->setObjectName("overpay_show");
-        overpay_show->setGeometry(QRect(172, 248, 137, 31));
+        overpay_show->setGeometry(QRect(173, 285, 137, 31));
         overpay_show->setFont(font3);
         overpay_show->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	qproperty-alignment: 'AlignVCenter | AlignRight';\n"
@@ -240,7 +243,7 @@ public:
         overpay_show->setWordWrap(true);
         totalPayment_show = new QLabel(Credit);
         totalPayment_show->setObjectName("totalPayment_show");
-        totalPayment_show->setGeometry(QRect(172, 283, 137, 31));
+        totalPayment_show->setGeometry(QRect(173, 320, 137, 31));
         totalPayment_show->setFont(font3);
         totalPayment_show->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	qproperty-alignment: 'AlignVCenter | AlignRight';\n"
@@ -273,6 +276,39 @@ public:
         line_5->setGeometry(QRect(58, 32, 124, 20));
         line_5->setFrameShape(QFrame::HLine);
         line_5->setFrameShadow(QFrame::Sunken);
+        monthlyPayment1 = new QLabel(Credit);
+        monthlyPayment1->setObjectName("monthlyPayment1");
+        monthlyPayment1->setGeometry(QRect(12, 250, 137, 31));
+        monthlyPayment1->setFont(font3);
+        monthlyPayment1->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	qproperty-alignment: 'AlignVCenter | AlignRight';\n"
+"    color: black; /* \320\246\320\262\320\265\321\202 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
+"    background-color: rgb(215, 215, 215); /* \320\244\320\276\320\275\320\276\320\262\321\213\320\271 \321\206\320\262\320\265\321\202 */\n"
+"	border-radius: 3px; \n"
+"    font-size: 15pt; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
+"    padding: 3px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\265 \320\276\321\202\321\201\321\202\321\203\320\277\321\213 */\n"
+"    border: 1px solid #333; /* \320\223\321\200\320\260\320\275\320\270\321\206\320\260 \320\262\320\276\320\272\321\200\321\203\320\263 QLabel */\n"
+"}\n"
+""));
+        monthlyPayment1->setWordWrap(true);
+        monthlyPayment2 = new QLabel(Credit);
+        monthlyPayment2->setObjectName("monthlyPayment2");
+        monthlyPayment2->setGeometry(QRect(173, 250, 137, 31));
+        monthlyPayment2->setFont(font3);
+        monthlyPayment2->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	qproperty-alignment: 'AlignVCenter | AlignRight';\n"
+"    color: black; /* \320\246\320\262\320\265\321\202 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
+"    background-color: rgb(215, 215, 215); /* \320\244\320\276\320\275\320\276\320\262\321\213\320\271 \321\206\320\262\320\265\321\202 */\n"
+"	border-radius: 3px; \n"
+"    font-size: 15pt; /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 */\n"
+"    padding: 3px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\265 \320\276\321\202\321\201\321\202\321\203\320\277\321\213 */\n"
+"    border: 1px solid #333; /* \320\223\321\200\320\260\320\275\320\270\321\206\320\260 \320\262\320\276\320\272\321\200\321\203\320\263 QLabel */\n"
+"}\n"
+""));
+        monthlyPayment2->setWordWrap(true);
+        label = new QLabel(Credit);
+        label->setObjectName("label");
+        label->setGeometry(QRect(158, 258, 21, 16));
         background_grey->raise();
         creditAmount->raise();
         creditAmountText->raise();
@@ -288,7 +324,7 @@ public:
         overpayText->raise();
         totalPaymentText->raise();
         pushButton_clear->raise();
-        pushButton_clear_2->raise();
+        pushButton_calculate->raise();
         monthlyPayments_show->raise();
         overpay_show->raise();
         totalPayment_show->raise();
@@ -296,6 +332,9 @@ public:
         line_3->raise();
         line_4->raise();
         line_5->raise();
+        monthlyPayment1->raise();
+        monthlyPayment2->raise();
+        label->raise();
 
         retranslateUi(Credit);
 
@@ -314,11 +353,14 @@ public:
         overpayText->setText(QCoreApplication::translate("Credit", "Overpay:", nullptr));
         totalPaymentText->setText(QCoreApplication::translate("Credit", "Total payment:", nullptr));
         pushButton_clear->setText(QCoreApplication::translate("Credit", "Clear", nullptr));
-        pushButton_clear_2->setText(QCoreApplication::translate("Credit", "Calculate", nullptr));
+        pushButton_calculate->setText(QCoreApplication::translate("Credit", "Calculate", nullptr));
         background_grey->setText(QString());
         monthlyPayments_show->setText(QString());
         overpay_show->setText(QString());
         totalPayment_show->setText(QString());
+        monthlyPayment1->setText(QString());
+        monthlyPayment2->setText(QString());
+        label->setText(QCoreApplication::translate("Credit", "-", nullptr));
     } // retranslateUi
 
 };

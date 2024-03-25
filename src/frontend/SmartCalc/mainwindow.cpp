@@ -58,8 +58,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_graph, SIGNAL(clicked()), this, SLOT(createGraph()));
     connect(ui->pushButton_credit, SIGNAL(clicked()), this, SLOT(createCredit()));
     connect(ui->pushButton_deposit, SIGNAL(clicked()), this, SLOT(createDeposit()));
-
-
 }
 
 

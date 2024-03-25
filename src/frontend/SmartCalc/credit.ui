@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>420</width>
-    <height>327</height>
+    <height>364</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -191,7 +191,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>249</y>
+     <y>282</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -207,7 +207,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>284</y>
+     <y>317</y>
      <width>141</width>
      <height>31</height>
     </rect>
@@ -225,7 +225,7 @@
      <x>323</x>
      <y>214</y>
      <width>91</width>
-     <height>41</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
@@ -272,13 +272,13 @@ QPushButton:pressed, QPushButton:checked {
     <string>Clear</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_clear_2">
+  <widget class="QPushButton" name="pushButton_calculate">
    <property name="geometry">
     <rect>
      <x>323</x>
-     <y>271</y>
+     <y>288</y>
      <width>91</width>
-     <height>41</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
@@ -318,7 +318,7 @@ QPushButton:pressed {
      <x>5</x>
      <y>204</y>
      <width>312</width>
-     <height>119</height>
+     <height>155</height>
     </rect>
    </property>
    <property name="font">
@@ -387,8 +387,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="overpay_show">
    <property name="geometry">
     <rect>
-     <x>172</x>
-     <y>248</y>
+     <x>173</x>
+     <y>285</y>
      <width>137</width>
      <height>31</height>
     </rect>
@@ -421,8 +421,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="totalPayment_show">
    <property name="geometry">
     <rect>
-     <x>172</x>
-     <y>283</y>
+     <x>173</x>
+     <y>320</y>
      <width>137</width>
      <height>31</height>
     </rect>
@@ -504,6 +504,87 @@ QPushButton:pressed {
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
+  <widget class="QLabel" name="monthlyPayment1">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>250</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: rgb(215, 215, 215); /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="monthlyPayment2">
+   <property name="geometry">
+    <rect>
+     <x>173</x>
+     <y>250</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: rgb(215, 215, 215); /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>158</x>
+     <y>258</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+  </widget>
   <zorder>background_grey</zorder>
   <zorder>creditAmount</zorder>
   <zorder>creditAmountText</zorder>
@@ -519,7 +600,7 @@ QPushButton:pressed {
   <zorder>overpayText</zorder>
   <zorder>totalPaymentText</zorder>
   <zorder>pushButton_clear</zorder>
-  <zorder>pushButton_clear_2</zorder>
+  <zorder>pushButton_calculate</zorder>
   <zorder>monthlyPayments_show</zorder>
   <zorder>overpay_show</zorder>
   <zorder>totalPayment_show</zorder>
@@ -527,6 +608,9 @@ QPushButton:pressed {
   <zorder>line_3</zorder>
   <zorder>line_4</zorder>
   <zorder>line_5</zorder>
+  <zorder>monthlyPayment1</zorder>
+  <zorder>monthlyPayment2</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>

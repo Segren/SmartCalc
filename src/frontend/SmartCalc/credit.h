@@ -16,9 +16,14 @@ public:
     ~Credit();
 
 private slots:
-    // void on_lineEdit_textChanged(const QString &arg1);
 
     void on_pushButton_clear_clicked();
+
+    void on_pushButton_calculate_clicked();
+
+public slots:
+
+    void paymentType_newText(const QString &arg1);
 
 private:
     Ui::Credit *ui;
