@@ -42,24 +42,24 @@ void Deposit::on_pushButton_clear_clicked()
 
 void Deposit::on_pushButton_calculate_clicked()
 {
-    long double PV = ui->depositAmount_show->text().toDouble();                          //первоначальная сумма вклада
-    long double r = ui->interestRate_show->text().toDouble() / 100;                      // годовая процентная ставка
-    long double taxRate = ui->taxRate_show->text().toDouble() / 100;                     // налоговая ставка на доход от процентов
-    long double monthlyReplenishment = ui->monthlyReplenishment_show->text().toDouble(); //Ежемесячное пополнение
-    long double monthlyWithdrawal = ui->monthlyWithdrawal_show->text().toDouble();       //Ежемесячное снятие
-    long double term = 0.0;                                                              //срок вклада в месяцах
+    double PV = ui->depositAmount_show->text().toDouble();                          //первоначальная сумма вклада
+    double r = ui->interestRate_show->text().toDouble() / 100;                      // годовая процентная ставка
+    double taxRate = ui->taxRate_show->text().toDouble() / 100;                     // налоговая ставка на доход от процентов
+    double monthlyReplenishment = ui->monthlyReplenishment_show->text().toDouble(); //Ежемесячное пополнение
+    double monthlyWithdrawal = ui->monthlyWithdrawal_show->text().toDouble();       //Ежемесячное снятие
+    double term = 0.0;                                                              //срок вклада в месяцах
     if(ui->termType->currentText() == "months")
         term = ui->term_show->text().toDouble();
     else if(ui->termType->currentText() == "years")
         term = ui->term_show->text().toDouble() * 12.0;
 
-    long double currentBalance = PV;
+    double currentBalance = PV;
 
     if(!ui->capitalisationButton->isChecked())
     {
-        long double FV = PV *(1.0+r*term/12.0);
-        long double totalInterest = PV * r * term/12.0;
-        long double totalTax = totalInterest * taxRate;
+        double FV = PV *(1.0+r*term/12.0);
+        double totalInterest = PV * r * term/12.0;
+        double totalTax = totalInterest * taxRate;
 
         FV += monthlyReplenishment*term - monthlyWithdrawal*term;
 
@@ -67,13 +67,13 @@ void Deposit::on_pushButton_calculate_clicked()
         ui->totalEarned_show->setText(QString::number((FV-PV - monthlyReplenishment*term + monthlyWithdrawal*term - totalTax),'f',2));
         ui->taxAmount_show->setText(QString::number(totalTax,'f',2));
     } else {
-        long double interestSumm = 0; //сумма налога (*)
-        long double monthlyRate = r/12;
+        double interestSumm = 0; //сумма налога (*)
+        double monthlyRate = r/12;
         for(int month = 1;month<=term;++month){
-            long double balanceBeforeInterest = currentBalance;
+            double balanceBeforeInterest = currentBalance;
             currentBalance *= (1 + monthlyRate);
-            long double interestEarned = currentBalance - balanceBeforeInterest;
-            long double taxDeduction = interestEarned * taxRate;
+            double interestEarned = currentBalance - balanceBeforeInterest;
+            double taxDeduction = interestEarned * taxRate;
             interestSumm += taxDeduction;
 
             currentBalance -= taxDeduction;
