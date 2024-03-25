@@ -14,3 +14,23 @@ Deposit::~Deposit()
 {
     delete ui;
 }
+
+void Deposit::on_pushButton_clear_clicked()
+{
+    ui->totalEarned_show->setText("");
+    ui->taxAmount_show->setText("");
+    ui->totalAmount_show->setText("");
+    ui->depositAmount_show->setText("");
+    ui->term_show->setText("");
+    ui->interestRate_show->setText("");
+    ui->taxRate_show->setText("");
+    ui->monthlyReplenishment_show->setText("");
+    ui->monthlyWithdrawal_show->setText("");
+}
+
+
+void Deposit::on_pushButton_calculate_clicked()
+{
+
+}
+

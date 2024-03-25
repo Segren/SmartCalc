@@ -6,13 +6,763 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>492</width>
+    <height>435</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Deposit Calc</string>
   </property>
+  <widget class="QLabel" name="background_grey">
+   <property name="geometry">
+    <rect>
+     <x>-152</x>
+     <y>-11</y>
+     <width>312</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Digital-7</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: white; /* Цвет текста */
+    background-color: rgb(215, 215, 215); /* Фоновый цвет */
+    font-family: 'Digital-7', Monospace; /* Шрифты */
+    font-size: 30pt; /* Размер шрифта */
+    padding: 8px; /* Внутренние отступы */
+    border: 3px solid #333; /* Граница вокруг QLabel */
+	border-radius: 6px; /* Скругление углов */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="totalEarned_text">
+   <property name="geometry">
+    <rect>
+     <x>19</x>
+     <y>22</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Total earned</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="taxAmount_text">
+   <property name="geometry">
+    <rect>
+     <x>17</x>
+     <y>123</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Tax Amount</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="totalAmount_text">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>229</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px; /* Размер шрифта */</string>
+   </property>
+   <property name="text">
+    <string>Total Amount</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="totalEarned_show">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>55</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: white; /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="taxAmount_show">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>158</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: white; /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="totalAmount_show">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>265</y>
+     <width>137</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	qproperty-alignment: 'AlignVCenter | AlignRight';
+    color: black; /* Цвет текста */
+    background-color: white; /* Фоновый цвет */
+	border-radius: 3px; 
+    font-size: 15pt; /* Размер шрифта */
+    padding: 3px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="depostAmount_text">
+   <property name="geometry">
+    <rect>
+     <x>169</x>
+     <y>11</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Deposit amount:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="depositAmount_show">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>37</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="term_text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>79</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Term:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="term_show">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>102</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="termType">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>102</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 15pt; /* Размер шрифта */
+    padding: 4px; /* Внутренние отступы */
+    border: 1px solid #333; </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="interestRate_text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>157</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Interest rate:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="interestRate_show">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>150</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="percentText">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>146</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="texRate_text">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>200</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Tax rate:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="taxRate_show">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>192</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="percentText_2">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>187</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="peroidOfPayments_text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>242</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Period of payments:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="periodOfPaymentsType">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>269</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 15pt; /* Размер шрифта */
+    padding: 4px; /* Внутренние отступы */
+    border: 1px solid #333; </string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="capitalisationButton">
+   <property name="geometry">
+    <rect>
+     <x>318</x>
+     <y>274</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>capitalisation of interest</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="monthlyReplenishment_text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>312</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Monthly replenishment:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="monthlyReplenishment_show">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>332</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="monthlywithdrawal_text">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>372</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Monthly withdrawal:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="monthlyWithdrawal_show">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>395</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    color: white; /* Цвет текста */
+    background-color: #6b6b6b; /* Фоновый цвет */
+    font-size: 20pt; /* Размер шрифта */
+    padding: 6px; /* Внутренние отступы */
+    border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>42</y>
+     <width>118</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>17</x>
+     <y>136</y>
+     <width>118</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_3">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>239</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_4">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>27</y>
+     <width>118</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_5">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>90</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_6">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>167</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_7">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>212</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_8">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>253</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_9">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>322</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_10">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>287</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_11">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>389</y>
+     <width>142</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_clear">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>311</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    /* Основные настройки */
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #f6f7fa, stop:1 #dadbde);
+    min-width: 20px;
+    min-height: 10px;
+
+    /* Текст и шрифт */
+    color: #333;
+    font: bold 14px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    /* Изменения при наведении курсора */
+    border: 2px solid #FF7832;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #dadbde, stop:1 #FF9739);
+}
+
+QPushButton:pressed, QPushButton:checked {
+    /* Изменения при нажатии */
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #FF7832, stop:1 #FF9739);
+    color: white;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_calculate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>373</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Osaka</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #406592; 
+    color: white; /* Белый текст */
+    border-radius: 6px; /* Слегка скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    border: 1px solid #404040; /* Тонкая граница */
+    text-align: center; /* Выравнивание текста */
+}
+
+QPushButton:hover {
+    background-color: #72aad6; /* Немного светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070; /* Чуть темнее при нажатии */
+    border: 1px solid #303030; /* Темнее граница при нажатии */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Calculate</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
