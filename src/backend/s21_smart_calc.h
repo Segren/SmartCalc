@@ -7,4 +7,4 @@
 #include <stdlib.h>
 #include <string.h>
 
-#endif // SMATR_CALC_H
+#endif // SMART_CALC_H

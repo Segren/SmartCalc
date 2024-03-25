@@ -254,6 +254,9 @@
     padding: 6px; /* Внутренние отступы */
     border: 1px solid #333; /* Граница вокруг QLabel */</string>
    </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
   <widget class="QLabel" name="term_text">
    <property name="geometry">
@@ -289,6 +292,9 @@
     font-size: 20pt; /* Размер шрифта */
     padding: 6px; /* Внутренние отступы */
     border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QComboBox" name="termType">
@@ -343,6 +349,9 @@
     padding: 6px; /* Внутренние отступы */
     border: 1px solid #333; /* Граница вокруг QLabel */</string>
    </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
   <widget class="QLabel" name="percentText">
    <property name="geometry">
@@ -391,6 +400,9 @@
     font-size: 20pt; /* Размер шрифта */
     padding: 6px; /* Внутренние отступы */
     border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="percentText_2">
@@ -490,6 +502,9 @@
     padding: 6px; /* Внутренние отступы */
     border: 1px solid #333; /* Граница вокруг QLabel */</string>
    </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
   <widget class="QLabel" name="monthlywithdrawal_text">
    <property name="geometry">
@@ -525,6 +540,9 @@
     font-size: 20pt; /* Размер шрифта */
     padding: 6px; /* Внутренние отступы */
     border: 1px solid #333; /* Граница вокруг QLabel */</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="Line" name="line">

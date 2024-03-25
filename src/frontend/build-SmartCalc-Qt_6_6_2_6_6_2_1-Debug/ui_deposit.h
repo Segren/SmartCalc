@@ -391,15 +391,21 @@ public:
         taxAmount_show->setText(QString());
         totalAmount_show->setText(QString());
         depostAmount_text->setText(QCoreApplication::translate("Deposit", "Deposit amount:", nullptr));
+        depositAmount_show->setText(QString());
         term_text->setText(QCoreApplication::translate("Deposit", "Term:", nullptr));
+        term_show->setText(QString());
         interestRate_text->setText(QCoreApplication::translate("Deposit", "Interest rate:", nullptr));
+        interestRate_show->setText(QString());
         percentText->setText(QCoreApplication::translate("Deposit", "%", nullptr));
         texRate_text->setText(QCoreApplication::translate("Deposit", "Tax rate:", nullptr));
+        taxRate_show->setText(QString());
         percentText_2->setText(QCoreApplication::translate("Deposit", "%", nullptr));
         peroidOfPayments_text->setText(QCoreApplication::translate("Deposit", "Period of payments:", nullptr));
         capitalisationButton->setText(QCoreApplication::translate("Deposit", "capitalisation of interest", nullptr));
         monthlyReplenishment_text->setText(QCoreApplication::translate("Deposit", "Monthly replenishment:", nullptr));
+        monthlyReplenishment_show->setText(QString());
         monthlywithdrawal_text->setText(QCoreApplication::translate("Deposit", "Monthly withdrawal:", nullptr));
+        monthlyWithdrawal_show->setText(QString());
         pushButton_clear->setText(QCoreApplication::translate("Deposit", "Clear", nullptr));
         pushButton_calculate->setText(QCoreApplication::translate("Deposit", "Calculate", nullptr));
     } // retranslateUi
