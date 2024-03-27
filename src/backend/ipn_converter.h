@@ -1,30 +1,35 @@
 #ifndef IPN_CONVERTER_H
 #define IPN_CONVERTER_H
 
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "s21_smart_calc.h"
 #include "stack.h"
 
-typedef enum
-{
-    SUM,
-    SUB,
-    MUL,
-    DIV,
-    MOD,
-    SQR,
-    SQRT,
-    SIN,
-    COS,
-    ASIN,
-    ACOS,
-    TAN,
-    ATAN,
-    LOG,
-    LN,
-    LEFT_BRACKET,
-    RIGHT_BRACKET,
-    UNAR_SUB,
-    UNKNOWN
+typedef enum {
+  SUM,
+  SUB,
+  MUL,
+  DIV,
+  MOD,
+  SQR,
+  SQRT,
+  SIN,
+  COS,
+  ASIN,
+  ACOS,
+  TAN,
+  ATAN,
+  LOG,
+  LN,
+  LEFT_BRACKET,
+  RIGHT_BRACKET,
+  UNAR_SUB,
+  UNKNOWN
 } OperationType;
 
 bool isDigit(const char input);
@@ -41,4 +46,4 @@ bool calculatePostfix(char *postfix, double *result, double x);
 bool calculatePostfixForGraph(char *originalPostfix, double *result, double x);
 int hasBalancedParenthesis(char *str);
 
-#endif // IPN_CONVERTER_H
+#endif  // IPN_CONVERTER_H

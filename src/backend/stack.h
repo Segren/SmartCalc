@@ -1,29 +1,27 @@
 #ifndef STACK_H
 #define STACK_H
 
+#include "ipn_converter.h"
 #include "s21_smart_calc.h"
 
 #define MAX_SIZE 255
 
 // стек для хранения операторов
-typedef struct
-{
-    int top;
-    char elements[MAX_SIZE]; // Массив символов для хранения операторов
+typedef struct {
+  int top;
+  char elements[MAX_SIZE];  // Массив символов для хранения операторов
 } OperatorStack;
 
 // стек для хранения функций
-typedef struct
-{
-    int top;
-    char *elements[MAX_SIZE]; // Массив символов для хранения функций
+typedef struct {
+  int top;
+  char *elements[MAX_SIZE];  // Массив символов для хранения функций
 } FunctionStack;
 
 // стек для вычислений постфикса
-typedef struct
-{
-    int top;
-    double elements[MAX_SIZE]; // Массив символов для хранения чисел
+typedef struct {
+  int top;
+  double elements[MAX_SIZE];  // Массив символов для хранения чисел
 } CalcStack;
 
 void initOpStack(OperatorStack *s);
@@ -50,4 +48,4 @@ double popCalcStack(CalcStack *s);
 double peekCalcStack(CalcStack *s);
 void clearCalcStack(CalcStack *s);
 
-#endif // STACK_H
+#endif  // STACK_H

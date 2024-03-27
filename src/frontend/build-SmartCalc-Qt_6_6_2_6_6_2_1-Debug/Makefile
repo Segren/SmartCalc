@@ -58,7 +58,6 @@ SOURCES       = ../SmartCalc/credit.cpp \
 		../SmartCalc/main.cpp \
 		../SmartCalc/mainwindow.cpp \
 		../../backend/ipn_converter.c \
-		../../backend/s21_smart_calc.c \
 		../../backend/stack.c \
 		../SmartCalc/qcustomplot.cpp moc_credit.cpp \
 		moc_deposit.cpp \
@@ -71,7 +70,6 @@ OBJECTS       = credit.o \
 		main.o \
 		mainwindow.o \
 		ipn_converter.o \
-		s21_smart_calc.o \
 		stack.o \
 		qcustomplot.o \
 		moc_credit.o \
@@ -401,7 +399,6 @@ DIST          = ../fonts/digital-7 \
 		../SmartCalc/graph.h \
 		../SmartCalc/mainwindow.h \
 		../../backend/ipn_converter.h \
-		../../backend/s21_smart_calc.h \
 		../../backend/stack.h \
 		../SmartCalc/qcustomplot.h ../SmartCalc/credit.cpp \
 		../SmartCalc/deposit.cpp \
@@ -409,7 +406,6 @@ DIST          = ../fonts/digital-7 \
 		../SmartCalc/main.cpp \
 		../SmartCalc/mainwindow.cpp \
 		../../backend/ipn_converter.c \
-		../../backend/s21_smart_calc.c \
 		../../backend/stack.c \
 		../SmartCalc/qcustomplot.cpp
 QMAKE_TARGET  = SmartCalc
@@ -1098,8 +1094,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/homebrew/share/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../SmartCalc/credit.h ../SmartCalc/deposit.h ../SmartCalc/graph.h ../SmartCalc/mainwindow.h ../../backend/ipn_converter.h ../../backend/s21_smart_calc.h ../../backend/stack.h ../SmartCalc/qcustomplot.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../SmartCalc/credit.cpp ../SmartCalc/deposit.cpp ../SmartCalc/graph.cpp ../SmartCalc/main.cpp ../SmartCalc/mainwindow.cpp ../../backend/ipn_converter.c ../../backend/s21_smart_calc.c ../../backend/stack.c ../SmartCalc/qcustomplot.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../SmartCalc/credit.h ../SmartCalc/deposit.h ../SmartCalc/graph.h ../SmartCalc/mainwindow.h ../../backend/ipn_converter.h  ../../backend/stack.h ../SmartCalc/qcustomplot.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../SmartCalc/credit.cpp ../SmartCalc/deposit.cpp ../SmartCalc/graph.cpp ../SmartCalc/main.cpp ../SmartCalc/mainwindow.cpp ../../backend/ipn_converter.c ../../backend/stack.c ../SmartCalc/qcustomplot.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SmartCalc/mainwindow.ui ../SmartCalc/credit.ui ../SmartCalc/deposit.ui ../SmartCalc/graph.ui $(DISTDIR)/
 
 
@@ -1179,7 +1175,6 @@ moc_mainwindow.cpp: ../SmartCalc/mainwindow.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		../SmartCalc/credit.h \
 		../SmartCalc/deposit.h \
-		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
 		moc_predefs.h \
@@ -1270,7 +1265,6 @@ graph.o: ../SmartCalc/graph.cpp ../SmartCalc/graph.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		../SmartCalc/credit.h \
 		../SmartCalc/deposit.h \
-		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o graph.o ../SmartCalc/graph.cpp
@@ -1295,7 +1289,6 @@ main.o: ../SmartCalc/main.cpp ../SmartCalc/mainwindow.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		../SmartCalc/credit.h \
 		../SmartCalc/deposit.h \
-		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QApplication \
@@ -1322,22 +1315,18 @@ mainwindow.o: ../SmartCalc/mainwindow.cpp ../SmartCalc/mainwindow.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		../SmartCalc/credit.h \
 		../SmartCalc/deposit.h \
-		../../backend/s21_smart_calc.h \
 		../../backend/ipn_converter.h \
 		../../backend/stack.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../SmartCalc/mainwindow.cpp
 
 ipn_converter.o: ../../backend/ipn_converter.c ../../backend/ipn_converter.h \
-		../../backend/s21_smart_calc.h \
 		../../backend/stack.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o ipn_converter.o ../../backend/ipn_converter.c
 
-s21_smart_calc.o: ../../backend/s21_smart_calc.c ../../backend/s21_smart_calc.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o s21_smart_calc.o ../../backend/s21_smart_calc.c
 
 stack.o: ../../backend/stack.c ../../backend/stack.h \
-		../../backend/s21_smart_calc.h
+		../../backend/ipn_converter.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o stack.o ../../backend/stack.c
 
 qcustomplot.o: ../SmartCalc/qcustomplot.cpp ../SmartCalc/qcustomplot.h \

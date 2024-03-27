@@ -7,26 +7,25 @@ namespace Ui {
 class Credit;
 }
 
-class Credit : public QWidget
-{
-    Q_OBJECT
+class Credit : public QWidget {
+  Q_OBJECT
 
-public:
-    explicit Credit(QWidget *parent = nullptr);
-    ~Credit();
+ public:
+  explicit Credit(QWidget *parent = nullptr);
+  ~Credit();
 
-private slots:
+ private slots:
 
-    void on_pushButton_clear_clicked();
+  void on_pushButton_clear_clicked();
 
-    void on_pushButton_calculate_clicked();
+  void on_pushButton_calculate_clicked();
 
-public slots:
+ public slots:
 
-    void paymentType_newText(const QString &arg1);
+  void paymentType_newText(const QString &arg1);
 
-private:
-    Ui::Credit *ui;
+ private:
+  Ui::Credit *ui;
 };
 
-#endif // CREDIT_H
+#endif  // CREDIT_H
