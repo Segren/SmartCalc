@@ -1,16 +1,10 @@
 #ifndef IPN_CONVERTER_H
 #define IPN_CONVERTER_H
 
-#include <math.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "s21_smart_calc.h"
-#include "stack.h"
 
-typedef enum {
+typedef enum
+{
   SUM,
   SUB,
   MUL,
@@ -47,4 +41,4 @@ bool calculatePostfixForGraph(const char *originalPostfix, double *result,
                               double x);
 int hasBalancedParenthesis(char *str);
 
-#endif  // IPN_CONVERTER_H
+#endif // IPN_CONVERTER_H

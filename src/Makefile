@@ -4,11 +4,18 @@ CFLAGS = -Wall -Werror -Wextra -std=c11 -g
 V_COMMAND = valgrind --trace-children=yes --track-fds=yes --track-origins=yes --leak-check=full --show-leak-kinds=all -s
 L_COMMAND = leaks -atExit --
 
-PATH_TO_OBJ = backend/objects/
-PATH_TO_TESTS = backend/test/
+PATH_TO_OBJ = objects/
+PATH_TO_TESTS = test/
 PATH_TO_MAIN = backend/
-PATH_TO_REPORT = backend/report/
+PATH_TO_REPORT = report/
 EXEC_T = unit_tests
+LIB_NAME = s21_SmartCalc.a
+
+
+SRC = $(wildcard $(PATH_TO_MAIN)*.c)
+OBJ = $(patsubst %.c, $(PATH_TO_OBJ)%.o, $(SRC))
+SRC_T = $(wildcard $(PATH_TO_TESTS)*.c)
+OBJ_T = $(patsubst %.c, $(PATH_TO_OBJ)%.o, $(SRC_T))
 
 OS := $(shell uname -s)
 
@@ -19,6 +26,10 @@ endif
 
 
 all: clean install
+
+s21_SmartCalc.a: $(OBJ)
+	@ar rcs $@ $(OBJ)
+	@ranlib $@
 
 install:
 	@echo "Start installation"
@@ -60,7 +71,10 @@ dist:
 	@cd dist && rm -rf $(TARGET).app README.md README_RUS.md
 	@echo "The build was successfully archived"
 
-test: clean coverage_flag $(OBJ_T) $(LIB_NAME)
+coverage_flag:
+	$(eval CFLAGS += --coverage)
+
+test: coverage_flag $(OBJ_T) $(LIB_NAME)
 
 ifeq ($(OS), Darwin)
 	$(CC) $(CFLAGS) $(OBJ_T) $(LIB_NAME) $(LIBS) -o $(PATH_TO_TESTS)$(EXEC_T)
