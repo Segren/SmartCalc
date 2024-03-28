@@ -1,7 +1,7 @@
 #include "ipn_converter.h"
 
 // сортировка ввода
-OperationType inputSort(char *input) {
+OperationType inputSort(const char *input) {
   OperationType sort;
   if (!strcmp(input, "+"))
     sort = SUM;
@@ -46,7 +46,7 @@ OperationType inputSort(char *input) {
 }
 
 // переводим ввод в токены и запихиваем в постфикс
-char *tokenize(char *expression) {
+char *tokenize(const char *expression) {
   OperatorStack operatorStack;
   initOpStack(&operatorStack);
   FunctionStack functionStack;
@@ -106,10 +106,10 @@ char *tokenize(char *expression) {
       } else if (expression[i] == ')') {
         while (!isOpStackEmpty(&operatorStack) &&
                peekOpStack(&operatorStack) != '(') {
-          char token[2];
-          token[0] = popOpStack(&operatorStack);
-          token[1] = '\0';
-          addTokenToPostfixExpression(postfix, token);
+          char tokenBr[2];
+          tokenBr[0] = popOpStack(&operatorStack);
+          tokenBr[1] = '\0';
+          addTokenToPostfixExpression(postfix, tokenBr);
         }
         // избавляемся от открывающей скобки
         popOpStack(&operatorStack);
@@ -235,13 +235,14 @@ void addTokenToPostfixExpression(char *postfix, const char *token) {
     printf("addTokenToPostfixExpression error: too long");
 }
 
-bool calculatePostfixForGraph(char *originalPostfix, double *result, double x) {
+bool calculatePostfixForGraph(const char *originalPostfix, double *result,
+                              double x) {
   bool flag = true;  // нет ошибки
   char *postfix = strdup(originalPostfix);
   CalcStack stack;
   initCalcStack(&stack);
 
-  char *token = strtok(postfix, " ");
+  const char *token = strtok(postfix, " ");
   while (token != NULL && flag == true) {
     if (isDigit(token[0]))
       // обработка цифр
@@ -363,13 +364,13 @@ bool calculatePostfixForGraph(char *originalPostfix, double *result, double x) {
   return flag;
 }
 
-bool calculatePostfix(char *originalPostfix, double *result, double x) {
+bool calculatePostfix(const char *originalPostfix, double *result, double x) {
   bool flag = true;  // нет ошибки
   char *postfix = strdup(originalPostfix);
   CalcStack stack;
   initCalcStack(&stack);
 
-  char *token = strtok(postfix, " ");
+  const char *token = strtok(postfix, " ");
   while (token != NULL && flag == true) {
     if (isDigit(token[0]))
       // обработка цифр

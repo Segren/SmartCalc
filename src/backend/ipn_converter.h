@@ -39,11 +39,12 @@ bool isOperator(const char input);
 bool isUnaryMinus(const char *expression, int index);
 bool isX(const char input);
 int getPrecedence(OperationType op);
-char *tokenize(char *expression);
-OperationType inputSort(char *input);
+char *tokenize(const char *expression);
+OperationType inputSort(const char *input);
 void addTokenToPostfixExpression(char *postfix, const char *token);
-bool calculatePostfix(char *postfix, double *result, double x);
-bool calculatePostfixForGraph(char *originalPostfix, double *result, double x);
+bool calculatePostfix(const char *postfix, double *result, double x);
+bool calculatePostfixForGraph(const char *originalPostfix, double *result,
+                              double x);
 int hasBalancedParenthesis(char *str);
 
 #endif  // IPN_CONVERTER_H

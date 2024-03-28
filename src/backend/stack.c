@@ -2,9 +2,9 @@
 
 void initOpStack(OperatorStack *s) { s->top = -1; }
 
-int isOpStackEmpty(OperatorStack *s) { return s->top == -1; }
+int isOpStackEmpty(const OperatorStack *s) { return s->top == -1; }
 
-int isOpStackFull(OperatorStack *s) { return s->top == MAX_SIZE - 1; }
+int isOpStackFull(const OperatorStack *s) { return s->top == MAX_SIZE - 1; }
 
 void pushOpStack(OperatorStack *s, char item) {
   if (!isOpStackFull(s)) {
@@ -41,11 +41,11 @@ void clearOpStack(OperatorStack *s) { s->top = -1; }
 
 void initFuncStack(FunctionStack *s) { s->top = -1; }
 
-int isFuncStackEmpty(FunctionStack *s) { return s->top == -1; }
+int isFuncStackEmpty(const FunctionStack *s) { return s->top == -1; }
 
-int isFuncStackFull(FunctionStack *s) { return s->top == MAX_SIZE - 1; }
+int isFuncStackFull(const FunctionStack *s) { return s->top == MAX_SIZE - 1; }
 
-void pushFuncStack(FunctionStack *s, char *item) {
+void pushFuncStack(FunctionStack *s, const char *item) {
   if (!isFuncStackFull(s)) {
     // выделение памяти для новой строки
     s->elements[++(s->top)] = malloc(strlen(item) + 1);
@@ -90,9 +90,9 @@ void clearFuncStack(FunctionStack *s) {
 
 void initCalcStack(CalcStack *s) { s->top = -1; }
 
-int isCalcStackEmpty(CalcStack *s) { return s->top == -1; }
+int isCalcStackEmpty(const CalcStack *s) { return s->top == -1; }
 
-int isCalcStackFull(CalcStack *s) { return s->top == MAX_SIZE - 1; }
+int isCalcStackFull(const CalcStack *s) { return s->top == MAX_SIZE - 1; }
 
 void pushCalcStack(CalcStack *s, double item) {
   if (!isCalcStackFull(s)) {

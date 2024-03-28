@@ -25,24 +25,24 @@ typedef struct {
 } CalcStack;
 
 void initOpStack(OperatorStack *s);
-int isOpStackEmpty(OperatorStack *s);
-int isOpStackFull(OperatorStack *s);
+int isOpStackEmpty(const OperatorStack *s);
+int isOpStackFull(const OperatorStack *s);
 void pushOpStack(OperatorStack *s, char item);
 char popOpStack(OperatorStack *s);
 char peekOpStack(OperatorStack *s);
 void clearOpStack(OperatorStack *s);
 
 void initFuncStack(FunctionStack *s);
-int isFuncStackEmpty(FunctionStack *s);
-int isFuncStackFull(FunctionStack *s);
-void pushFuncStack(FunctionStack *s, char *item);
+int isFuncStackEmpty(const FunctionStack *s);
+int isFuncStackFull(const FunctionStack *s);
+void pushFuncStack(FunctionStack *s, const char *item);
 char *popFuncStack(FunctionStack *s);
 char *peekFuncStack(FunctionStack *s);
 void clearFuncStack(FunctionStack *s);
 
 void initCalcStack(CalcStack *s);
-int isCalcStackEmpty(CalcStack *s);
-int isCalcStackFull(CalcStack *s);
+int isCalcStackEmpty(const CalcStack *s);
+int isCalcStackFull(const CalcStack *s);
 void pushCalcStack(CalcStack *s, double item);
 double popCalcStack(CalcStack *s);
 double peekCalcStack(CalcStack *s);

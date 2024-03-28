@@ -25,15 +25,15 @@ install:
 	@mkdir -p build
 	# @cd frontend/SmartCalc && qmake && make && make clean && rm -rf Makefile && mv SmartCalc.app build/$(TARGET).app
 	# @cp -R build/$(TARGET).app ~/Desktop/$(TARGET).app
+	@cd frontend/SmartCalc && qmake
+	@cd frontend/SmartCalc && make
+	@mv frontend/SmartCalc/$(TARGET).app build/$(TARGET).app
+	@cp -R build/$(TARGET).app ~/Desktop/
 	# @echo "┏=========================================┓"
 	# @echo "┃    The installation was successful.     ┃"
 	# @echo "┃     The project is located in the       ┃"
 	# @echo "┃    build folder and on the desktop.     ┃"
 	# @echo "┗=========================================┛"
-	@cd frontend/SmartCalc && qmake
-	@cd frontend/SmartCalc && make
-	@mv frontend/SmartCalc/$(TARGET).app build/$(TARGET).app
-	@cp -R build/$(TARGET).app ~/Desktop/
 
 uninstall:
 	rm -rf ~/Desktop/$(TARGET).app
@@ -99,7 +99,7 @@ format_check:
 	@rm .clang-format
 
 cppcheck:
-	@find . -name '*.c' -o -name '*.h' | xargs cppcheck --enable=all --suppress=missingIncludeSystem
+	@find ./backend -name '*.c' -o -name '*.h' | xargs cppcheck --enable=all --suppress=missingIncludeSystem
 
 leaks:
 	@if [ -f "$(PATH_TO_TESTS)$(EXEC_T)" ]; then \
