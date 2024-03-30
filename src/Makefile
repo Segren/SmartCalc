@@ -61,6 +61,7 @@ clean:
 	rm -rf build/$(TARGET).app
 	rm -rf ~/Desktop/$(TARGET).app
 	rm -rf s21_SmartCalc.a
+	rm -rf test/unit_tests
 
 dvi:
 	@open README_RUS.md
@@ -123,11 +124,4 @@ leaks:
         echo "Test executable not found."; \
     fi
 
-valgrind:
-	@if [ -f "$(PATH_TO_TESTS)$(EXEC_T)" ]; then \
-        $(V_COMMAND) ./$(PATH_TO_TESTS)$(EXEC_T); \
-    else \
-        echo "Test executable not found."; \
-    fi
-
- .PHONY: all install uninstall clean dvi dist test gcov_report format format_check cppcheck leaks valgrind
+ .PHONY: all install uninstall clean dvi dist test gcov_report format format_check cppcheck leaks
