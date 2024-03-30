@@ -60,6 +60,7 @@ clean:
 	rm -rf dist
 	rm -rf build/$(TARGET).app
 	rm -rf ~/Desktop/$(TARGET).app
+	rm -rf s21_SmartCalc.a
 
 dvi:
 	@open README_RUS.md

@@ -2,7 +2,7 @@
 
 // сортировка ввода
 OperationType inputSort(const char *input) {
-  OperationType sort;
+  OperationType sort = UNKNOWN;
   if (!strcmp(input, "+"))
     sort = SUM;
   else if (!strcmp(input, "#"))
@@ -39,8 +39,6 @@ OperationType inputSort(const char *input) {
     sort = LEFT_BRACKET;
   else if (!strcmp(input, ")"))
     sort = RIGHT_BRACKET;
-  else
-    sort = UNKNOWN;
 
   return sort;
 }
@@ -85,17 +83,20 @@ char *tokenize(const char *expression) {
       i++;
     } else if (isOperator(expression[i])) {
       if (!isOpStackEmpty(&operatorStack)) {
-        char stackStr[2];
-        stackStr[0] = peekOpStack(&operatorStack);
-        stackStr[1] = '\0';
-        char expressionStr[2];
-        expressionStr[0] = expression[i];
-        expressionStr[1] = '\0';
-        if (getPrecedence(inputSort(expressionStr)) <
-            getPrecedence(inputSort(stackStr))) {
-          stackStr[0] = popOpStack(&operatorStack);
+        while (!isOpStackEmpty(&operatorStack)) {
+          char stackStr[2];
+          stackStr[0] = peekOpStack(&operatorStack);
           stackStr[1] = '\0';
-          addTokenToPostfixExpression(postfix, stackStr);
+          char expressionStr[2];
+          expressionStr[0] = expression[i];
+          expressionStr[1] = '\0';
+          if (getPrecedence(inputSort(expressionStr)) <
+              getPrecedence(inputSort(stackStr))) {
+            stackStr[0] = popOpStack(&operatorStack);
+            stackStr[1] = '\0';
+            addTokenToPostfixExpression(postfix, stackStr);
+          } else
+            break;
         }
       }
       pushOpStack(&operatorStack, expression[i]);
@@ -116,16 +117,19 @@ char *tokenize(const char *expression) {
         // проверяем стоит ли за скобкой функция. Если да - перевести в выходную
         // строку
         if (!isFuncStackEmpty(&functionStack)) {
-          addTokenToPostfixExpression(postfix, popFuncStack(&functionStack));
+          char *item = popFuncStack(&functionStack);
+          addTokenToPostfixExpression(postfix, item);
+          free(item);
         }
       }
       i++;
     } else if (expression[i] == ' ') {
       i++;
-    } else {
-      printf("Tokenize: input unknown\n");
-      i++;
     }
+    // else {
+    //   printf("Tokenize: input unknown\n");
+    //   i++;
+    // }
   }
   // извлекаем оставшиеся операторы из стека
   while (!isOpStackEmpty(&operatorStack)) {
@@ -175,7 +179,7 @@ int getPrecedence(OperationType op) {
       precedence = 6;
       break;
     case UNKNOWN:
-      printf("getPrecedence error: unknown value");
+      // printf("getPrecedence error: unknown value");
       break;
   }
   return precedence;
@@ -231,8 +235,9 @@ void addTokenToPostfixExpression(char *postfix, const char *token) {
   if (strlen(postfix) + strlen(token) + 1 < MAX_SIZE) {
     strcat(postfix, token);
     strcat(postfix, " ");
-  } else
-    printf("addTokenToPostfixExpression error: too long");
+  }
+  // else
+  //     printf("addTokenToPostfixExpression error: too long");
 }
 
 bool calculatePostfixForGraph(const char *originalPostfix, double *result,

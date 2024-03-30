@@ -10,4 +10,4 @@
 #include "ipn_converter.h"
 #include "stack.h"
 
-#endif // SMART_CALC_H
+#endif  // SMART_CALC_H

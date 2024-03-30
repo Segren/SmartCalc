@@ -3,8 +3,7 @@
 
 #include "s21_smart_calc.h"
 
-typedef enum
-{
+typedef enum {
   SUM,
   SUB,
   MUL,
@@ -41,4 +40,4 @@ bool calculatePostfixForGraph(const char *originalPostfix, double *result,
                               double x);
 int hasBalancedParenthesis(char *str);
 
-#endif // IPN_CONVERTER_H
+#endif  // IPN_CONVERTER_H
