@@ -106,12 +106,12 @@ gcov_report: clean coverage_flag test
 
 format:
 	@cp ../materials/linters/.clang-format ./
-	@find . -name '*.c' -o -name '*.h' | xargs clang-format -i
+	@find ./backend -name '*.c' -o -name '*.h' | xargs clang-format -i
 	@rm .clang-format
 
 format_check:
 	@cp ../materials/linters/.clang-format ./
-	@find . -name '*.c' -o -name '*.h' | xargs clang-format -n
+	@find ./backend -name '*.c' -o -name '*.h' | xargs clang-format -n
 	@rm .clang-format
 
 cppcheck:
